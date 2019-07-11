@@ -20,19 +20,14 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
-#include <sys/time.h>
-#include <cstddef>
-#include <string>
+#include "clock.h"
 
-class Clock
+Clock::Clock()
 {
-    private:
-        timeval time_before, time_after;
-        timeval current_time;
-    public:
-        Clock(); //Default constructor
-        void start_clock(); //Start or rest the clock
-        void pause_clock(); //Pause the clock
-        double passed(); //Return time in seconds
-        double get_current_time(); //Return the current time
-};
+    this->start_clock;
+}
+
+void Clock::start_clock()
+{
+    
+}
