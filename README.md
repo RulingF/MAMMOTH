@@ -1,2 +1,2 @@
 # MAMMOTH
-Electronic structure method package test
+Electronic structure method package test, modified.
