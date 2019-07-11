@@ -24,10 +24,32 @@
 
 Clock::Clock()
 {
-    this->start_clock;
+    this->start_clock();
 }
 
 void Clock::start_clock()
 {
-    
+    clock_gettime(CLOCK_MONOTONIC,&time_before);
+}
+
+void Clock::pause_clock()
+{
+    clock_gettime(CLOCK_MONOTONIC,&time_after);
+}
+
+double Clock::get_passed_time()
+{
+    time_interval_second= time_after.tv_sec - time_before.tv_sec;
+    time_interval_nsecond= time_after.tv_nsec - time_before.tv_nsec;
+    time_passed = time_interval_second + static_cast <double> (time_interval_nsecond)/1000000000;
+    return time_passed;
+}
+
+char * Clock::get_current_time()
+{
+    time_t rawtime;
+    struct tm * timeinfo;
+    time (&rawtime);
+    timeinfo = localtime (&rawtime);
+    return asctime(timeinfo);
 }

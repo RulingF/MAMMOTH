@@ -21,18 +21,21 @@
 //  DEALINGS IN THE SOFTWARE.
 
 #include <sys/time.h>
+#include <time.h>
 #include <cstddef>
 #include <string>
 
 class Clock
 {
     private:
-        timeval time_before, time_after;
-        timeval current_time;
+        timespec time_before, time_after;
+        timeval current_time; //Store the current real time
+        double time_interval_second, time_interval_nsecond, time_passed; /*time_interval_second is the time difference before and after in seconds, 
+        time_inverval_nsecond is the that in nanoseconds, time_passed is the time passed in second with decimals*/
     public:
         Clock(); //Default constructor
-        void start_clock(); //Start or rest the clock
-        void pause_clock(); //Pause the clock
-        double passed(); //Return time in seconds
-        double get_current_time(); //Return the current time
+        void start_clock(); //Start or reset the clock
+        void pause_clock(); //Get time at the paused clock
+        double get_passed_time(); //Return time in seconds
+        char * get_current_time(); //Return the current real time
 };

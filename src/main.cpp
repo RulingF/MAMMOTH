@@ -22,6 +22,7 @@
 
 #include <iostream>
 #include "clock.h"
+#include <unistd.h> // Included for usleep function
 
 using namespace std;
 
@@ -38,8 +39,15 @@ int main(int argc, char *argv[])
     //Read the input geometry
     string filename;
     filename = argv[argc-1];
-
+    
     //Timing
     Clock time;
+    cout << "Current time : " << time.get_current_time() << endl;
+    time.start_clock();
+
+    usleep(20);
+    time.pause_clock();
+    time.get_passed_time();
+
 
 }
