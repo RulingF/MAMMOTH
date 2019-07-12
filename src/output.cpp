@@ -26,3 +26,8 @@ Output::Output(std::string file_name)
 {
     this->output_file.open(file_name);
 }
+
+void Output::write_string(std::string input_string)
+{
+    this->output_file << input_string << std::endl;
+}

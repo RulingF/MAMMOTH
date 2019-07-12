@@ -29,7 +29,5 @@ class Output
         std::ofstream output_file;
     public:
         Output(std::string file_name); //Default constructor
-
-
-
+        void write_string(std::string input_string);
 };
