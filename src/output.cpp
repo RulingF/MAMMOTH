@@ -22,7 +22,7 @@
 
 #include "output.h"
 
-Output::Output(char * file_pointer)
+Output::Output(std::string file_name)
 {
-    
+    this->output_file.open(file_name);
 }

@@ -21,11 +21,14 @@
 //  DEALINGS IN THE SOFTWARE.
 
 #include <iostream>
+#include <fstream>
 
 class Output
 {
+    private:
+        std::ofstream output_file;
     public:
-        Output(char * file_pointer); //Default constructor
+        Output(std::string file_name); //Default constructor
 
 
 
