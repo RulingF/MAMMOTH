@@ -21,31 +21,12 @@
 //  DEALINGS IN THE SOFTWARE.
 
 #include <iostream>
-#include "clock.h"
-#include "output.h"
-#include <unistd.h> // Included for usleep function for testing, safe to delete
 
-using namespace std;
-
-int main(int argc, char *argv[])
+class Output
 {
-    //parse the arguments, to be modified for details
-    if(argc ==1)
-    {
-        cout << "Usage: " << argv[0] << " <.input>" << endl;
-        cout << "Wrong input file" << endl;
-        return 0;
-    }
-
-    //Read the input geometry
-    string filename;
-    filename = argv[argc-1];
-
-    //Create output
-    Output out();
-    
-    //Timing
-    Clock time;
+    public:
+        Output(char * file_pointer); //Default constructor
 
 
-}
+
+};
