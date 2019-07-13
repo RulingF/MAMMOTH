@@ -20,4 +20,27 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
-/* code */
+#include <string>
+#include "atom.h"
+
+Atom::Atom(const int &Z)
+{
+    this->atomic_num_Z = Z;
+    this->atomic_num_2_element_symbol(Z);
+}
+
+Atom::Atom(const string &element)
+{
+    this->element_symbol = element;
+    this->element_symbol_2_atomic_num(element);
+}
+
+void Atom::atomic_num_2_element_symbol(const int &Z)
+{
+    //element_symbol = conversion function
+}
+
+void Atom::element_symbol_2_atomic_num(const string &element)
+{
+    //atomic_num_Z = conversion function
+}

@@ -31,6 +31,11 @@ class Atom
         string element_symbol;//symbol of the element
         unsigned int nelec;//number of electrons
         
+    public:
+        Atom(const int &Z);//constructor that takes the atomic number
+        Atom(const string &element);//constructor that takes the element symbol
+        void atomic_num_2_element_symbol(const int &Z);//recognises the atomic number
+        void element_symbol_2_atomic_num(const string &element);//recognises the element
 
-}
+};
 
