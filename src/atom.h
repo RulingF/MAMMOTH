@@ -20,4 +20,17 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
+#include <string>
+#include <vector>
+using namespace std;
+
+class Atom
+{
+    private:
+        unsigned int atomic_num_Z;//atomic number
+        string element_symbol;//symbol of the element
+        unsigned int nelec;//number of electrons
+        
+
+}
 
