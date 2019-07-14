@@ -20,4 +20,15 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
-#include <
+#include <vector>
+
+class cartesian
+{
+    private:
+        std::vector<double> V(const unsigned int n);//vector that takes n dimensional coordinates
+    public:
+        cartesian(const double x = 0, const double y = 0,const double z = 0);//Default constructor 3 dimensions
+        cartesian(const unsigned int n, ...);//Constructor n dimensions
+        cartesian(const cartesian &instance_same);//Constructor copy same coorinates
+        double getvalues(const unsigned int n, ...) const;//Returns n coordinate value, 1 = x, 2 = y, ...
+};
