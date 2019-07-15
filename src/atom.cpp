@@ -24,22 +24,21 @@
 
 Atom::Atom(const int &Z)
 {
-    this->atomic_num_Z = Z;
-    this->atomic_num_2_element_symbol(Z);
+    atomic_num_Z = Z;
+    element_symbol = all_element_symbols[Z];
+    nelec = Z;
+    atomic_mass = all_atomic_masses[Z]; //Default atomic mass is the most adundant isotope
 }
 
 Atom::Atom(const string &element)
 {
-    this->element_symbol = element;
-    this->element_symbol_2_atomic_num(element);
-}
-
-void Atom::atomic_num_2_element_symbol(const int &Z)
-{
-    //this->element_symbol = 
-}
-
-void Atom::element_symbol_2_atomic_num(const string &element)
-{
-    //this->atomic_num_Z = 
+    char elee[element.length()];
+    strcpy(elee,element.c_str());
+    //Above two lines for converting string to char *
+    unsigned int Z = ele2Z(elee);
+    //To keep the same style
+    atomic_num_Z = Z;
+    element_symbol = element;
+    nelec = Z;
+    atomic_mass = all_atomic_masses[Z]; //Default atomic mass is the most adundant isotope
 }

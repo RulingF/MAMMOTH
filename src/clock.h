@@ -23,7 +23,6 @@
 #include <sys/time.h>
 #include <time.h>
 #include <cstddef>
-#include <string>
 
 class Clock
 {

@@ -21,8 +21,11 @@
 //  DEALINGS IN THE SOFTWARE.
 
 #include <string>
+#include <string.h>
+#include <vector>
 #include "cartesian.h"
-//#include <vector>
+#include "elementdata.h"
+
 using namespace std;
 
 class Atom
@@ -32,12 +35,11 @@ class Atom
         string element_symbol;//symbol of the element
         unsigned int nelec;//number of electrons
         cartesian r;//cartesian coordinate of atom
+        double atomic_mass;//atomic mass, not that the default is the most abundant isotope
         
     public:
         Atom(const int &Z);//constructor that takes the atomic number
         Atom(const string &element);//constructor that takes the element symbol
-        void atomic_num_2_element_symbol(const int &Z);//recognises the atomic number
-        void element_symbol_2_atomic_num(const string &element);//recognises the element
 
 };
 
