@@ -22,7 +22,7 @@
 
 #include "cartesian.h"
 
-cartesian::cartesian(const double x, const double y,const double z)
+cartesian::cartesian(const double x, const double y,const double z)//A bug in 2 dimensional overloading has to be fixed!!!
 {
     this->n = 3;
     this->V = {x,y,z};
