@@ -20,4 +20,31 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
-/* code */
+#include "cartesian.h"
+
+cartesian::cartesian(const double x, const double y,const double z)
+{
+    this->n = 3;
+    this->V = {x,y,z};
+    //for(double n : V){std::cout << n << std::endl;} /* n is iteration in std::vector<double> V */
+}
+
+cartesian::cartesian(const unsigned int nn, ...)
+{
+    this->n = nn;
+}
+
+cartesian::cartesian(const cartesian &instance_same)
+{
+
+}
+
+unsigned int cartesian::getdimension()
+{
+    return this->n;
+}
+
+double cartesian::getcoordinates(const unsigned int nn, ...) const
+{
+    return NULL;
+}

@@ -21,6 +21,7 @@
 //  DEALINGS IN THE SOFTWARE.
 
 #include <string>
+#include "cartesian.h"
 //#include <vector>
 using namespace std;
 

@@ -25,10 +25,12 @@
 class cartesian
 {
     private:
-        std::vector<double> V(const unsigned int n);//vector that takes n dimensional coordinates
+        std::vector<double> V;//vector that takes n dimensional coordinates
+        unsigned int n;//n dimension
     public:
         cartesian(const double x = 0, const double y = 0,const double z = 0);//Default constructor 3 dimensions
-        cartesian(const unsigned int n, ...);//Constructor n dimensions
+        cartesian(const unsigned int nn, ...);//Constructor n dimensions
         cartesian(const cartesian &instance_same);//Constructor copy same coorinates
-        double getvalues(const unsigned int n, ...) const;//Returns n coordinate value, 1 = x, 2 = y, ...
+        unsigned int getdimension();
+        double getcoordinates(const unsigned int nn, ...) const;//Returns n coordinate value, 1 = x, 2 = y, ...
 };
