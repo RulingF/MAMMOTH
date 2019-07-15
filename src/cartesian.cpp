@@ -32,11 +32,17 @@ cartesian::cartesian(const double x, const double y,const double z)
 cartesian::cartesian(const unsigned int nn, ...)
 {
     this->n = nn;
+    va_list args;
+    va_start(args,nn);
+    for(unsigned int i = 0;i<nn;++i)
+        V.push_back(va_arg(args,double));
+    va_end(args);
 }
 
 cartesian::cartesian(const cartesian &instance_same)
 {
-
+    this->n = instance_same.n;
+    this->V = instance_same.V;
 }
 
 unsigned int cartesian::getdimension()
@@ -44,7 +50,16 @@ unsigned int cartesian::getdimension()
     return this->n;
 }
 
-double cartesian::getcoordinates(const unsigned int nn, ...) const
+std::vector<double> cartesian::getV()
 {
-    return NULL;
+    return this->V;
+}
+
+double cartesian::getcoordinate(const unsigned int nth) const
+{/*If nth exceeds the size(dimension) of V, return the last element of V, 
+otherwise return the nth element*/
+    if (nth > V.size())
+        return this->V[V.size()-1];
+    else
+        return this->V[nth-1];
 }

@@ -21,6 +21,7 @@
 //  DEALINGS IN THE SOFTWARE.
 
 #include <vector>
+#include <cstdarg>
 
 class cartesian
 {
@@ -31,6 +32,7 @@ class cartesian
         cartesian(const double x = 0, const double y = 0,const double z = 0);//Default constructor 3 dimensions
         cartesian(const unsigned int nn, ...);//Constructor n dimensions
         cartesian(const cartesian &instance_same);//Constructor copy same coorinates
-        unsigned int getdimension();
-        double getcoordinates(const unsigned int nn, ...) const;//Returns n coordinate value, 1 = x, 2 = y, ...
+        unsigned int getdimension();//Returns the dimension n
+        std::vector<double> getV();//Returns the n-dimensional vector V
+        double getcoordinate(const unsigned int nth) const;//Returns nth coordinate value, 1 = x, 2 = y, ...
 };
