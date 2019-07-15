@@ -22,11 +22,18 @@
 
 #include "cartesian.h"
 
-cartesian::cartesian(const double x, const double y,const double z)//A bug in 2 dimensional overloading has to be fixed!!!
+/*cartesian::cartesian(const double x, const double y,const double z)//A bug in 2 dimensional overloading has to be fixed!!!
 {
     this->n = 3;
     this->V = {x,y,z};
-    //for(double n : V){std::cout << n << std::endl;} /* n is iteration in std::vector<double> V */
+    //for(double n : V){std::cout << n << std::endl;} // n is iteration in std::vector<double> V
+}*/
+
+cartesian::cartesian()
+{
+    this->n = 3;
+    this->V = {0.0,0.0,0.0};
+    //for(double n : V){std::cout << n << std::endl;}
 }
 
 cartesian::cartesian(const unsigned int nn, ...)
