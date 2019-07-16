@@ -38,8 +38,8 @@ class Atom
         double atomic_mass;//atomic mass, not that the default is the most abundant isotope
         
     public:
-        Atom(const int &Z);//constructor that takes the atomic number
-        Atom(const string &element);//constructor that takes the element symbol
+        Atom(const int Z, const double xx,const double yy, const double zz);//constructor that takes the atomic number
+        Atom(const string element, const double xx,const double yy, const double zz);//constructor that takes the element symbol
 
 };
 

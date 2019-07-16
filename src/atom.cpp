@@ -22,15 +22,19 @@
 
 #include "atom.h"
 
-Atom::Atom(const int &Z)
+Atom::Atom(const int Z, const double xx,const double yy, const double zz)
 {
     atomic_num_Z = Z;
     element_symbol = all_element_symbols[Z];
     nelec = Z;
     atomic_mass = all_atomic_masses[Z]; //Default atomic mass is the most adundant isotope
+
+    r = cartesian(3, xx, yy, zz);//3 mean it's 3-dimensional cartesian coordinate
+    
+
 }
 
-Atom::Atom(const string &element)
+Atom::Atom(const string element, const double xx,const double yy, const double zz)
 {
     char elee[element.length()];
     strcpy(elee,element.c_str());
@@ -41,4 +45,6 @@ Atom::Atom(const string &element)
     element_symbol = element;
     nelec = Z;
     atomic_mass = all_atomic_masses[Z]; //Default atomic mass is the most adundant isotope
+
+    r = cartesian(3, xx, yy, zz);//3 mean it's 3-dimensional cartesian coordinate
 }
