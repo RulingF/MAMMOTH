@@ -21,10 +21,13 @@
 //  DEALINGS IN THE SOFTWARE.
 
 /*
-(Unnormalized) Cartesian GTOs are defined by an angular part which is a 
+Cartesian GTOs are defined by an angular part which is a 
 homogeneous polynomial in the components x, y, and z of the position vector r. 
 That is,
-    x^l * y^m * z^n * exp(-alpha * r^2) with l + m + n = 
+    N * x^a * y^b * z^c * exp(-alpha * r^2) 
+    -- N is a normalization constant
+    -- Angular momentum L = a + b + c
+    -- alpha controls width of orbital
  */
 
 #include "cartesian.h"
