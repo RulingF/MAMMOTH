@@ -20,14 +20,18 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
-#include <vector>
-#include <string>
-#include "cartesian.h"
-#include "gto.h"
+/*
+(Unnormalized) Cartesian GTOs are defined by an angular part which is a 
+homogeneous polynomial in the components x, y, and z of the position vector r. 
+That is,
+    x^l * y^m * z^n * exp(-alpha * r^2) with l + m + n = 
+ */
 
-class Basis
+#include "cartesian.h"
+
+class GTO
 {
     private:
-        std::string basisset_name;
-        std::vector<GTO> gtos;//Gaussian type orbitals
-}
+    public:
+};
+

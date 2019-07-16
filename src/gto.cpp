@@ -20,14 +20,4 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
-#include <vector>
-#include <string>
-#include "cartesian.h"
 #include "gto.h"
-
-class Basis
-{
-    private:
-        std::string basisset_name;
-        std::vector<GTO> gtos;//Gaussian type orbitals
-}
