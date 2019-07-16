@@ -25,6 +25,7 @@
 #include <vector>
 #include "cartesian.h"
 #include "elementdata.h"
+#include "basis.h"
 
 using namespace std;
 

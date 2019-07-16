@@ -20,31 +20,13 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
-#include "atom.h"
+#include <vector>
+#include <string>
+#include "cartesian.h"
 
-Atom::Atom(const int Z, const double xx,const double yy, const double zz)
+class Basis
 {
-    atomic_num_Z = Z;
-    element_symbol = all_element_symbols[Z];
-    nelec = Z;
-    atomic_mass = all_atomic_masses[Z]; //Default atomic mass is the most adundant isotope
-
-    r = cartesian(3, xx, yy, zz);//3 mean it's 3-dimensional cartesian coordinate
-
-}
-
-Atom::Atom(const string element, const double xx,const double yy, const double zz)
-{
-    char elee[element.length()];
-    strcpy(elee,element.c_str());
-    //Above two lines for converting string to char *
-    unsigned int Z = ele2Z(elee);
-    //To keep the same style
-    atomic_num_Z = Z;
-    element_symbol = element;
-    nelec = Z;
-    atomic_mass = all_atomic_masses[Z]; //Default atomic mass is the most adundant isotope
-
-    r = cartesian(3, xx, yy, zz);//3 mean it's 3-dimensional cartesian coordinate
-    
+    private:
+        std::string basisset_name;
+        std::vector<GTO> gtos;//Gaussian type orbitals
 }
