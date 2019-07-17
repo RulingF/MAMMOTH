@@ -20,4 +20,28 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
-#include "gto.h"
+/*
+Cartesian Gaussian Type Orbitals (CGTOs) are defined by an angular part which is a 
+homogeneous polynomial in the components x, y, and z of the position vector r. 
+That is,
+    N * x^a * y^b * z^c * exp(-alpha * r^2) 
+    -- N is a normalization constant
+    -- Angular momentum L = a + b + c
+    -- alpha controls width of orbital
+ */
+
+#include "cartesian.h"
+
+class CGTO
+{
+    public:
+        double N; //Normalization constant
+        unsigned int a, b, c; //Angular momentum L = a + b + c
+        double alpha; //alpha controls width of orbital
+        cartesian r;   
+
+    public:
+        CGTO(const double NN, const unsigned int aa, const unsigned int bb, const unsigned int cc, const double alpha, const cartesian rr);//Constructor takes in cartesian instance
+        CGTO(const double NN, const unsigned int aa, const unsigned int bb, const unsigned int cc, const double alpha, const double xx, const double yy, const double zz);//Constructor takes in xyz
+};
+

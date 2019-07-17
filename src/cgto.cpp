@@ -20,21 +20,24 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
-/*
-Cartesian GTOs are defined by an angular part which is a 
-homogeneous polynomial in the components x, y, and z of the position vector r. 
-That is,
-    N * x^a * y^b * z^c * exp(-alpha * r^2) 
-    -- N is a normalization constant
-    -- Angular momentum L = a + b + c
-    -- alpha controls width of orbital
- */
+#include "cgto.h"
 
-#include "cartesian.h"
-
-class GTO
+CGTO::CGTO(const double NN, const unsigned int aa, const unsigned int bb, const unsigned int cc, const double alphaa, const cartesian rr)
 {
-    private:
-    public:
-};
+    N = NN;
+    a = aa;
+    b = bb;
+    c = cc;
+    alpha = alphaa;
+    r = rr;
+}
 
+CGTO::CGTO(const double NN, const unsigned int aa, const unsigned int bb, const unsigned int cc, const double alphaa, const double xx, const double yy, const double zz)
+{
+    N = NN;
+    a = aa;
+    b = bb;
+    c = cc;
+    alpha = alphaa;
+    r = cartesian(3,xx,yy,zz);
+}
