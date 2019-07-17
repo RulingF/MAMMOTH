@@ -22,22 +22,36 @@
 
 #include "cgto.h"
 
-CGTO::CGTO(const double NN, const unsigned int aa, const unsigned int bb, const unsigned int cc, const double alphaa, const cartesian rr)
+CGTO::CGTO(const unsigned int aa, const unsigned int bb, const unsigned int cc,\
+ const double alphaa, const cartesian rr)
 {
-    N = NN;
     a = aa;
     b = bb;
     c = cc;
     alpha = alphaa;
     r = rr;
+    N = this->getN();
 }
 
-CGTO::CGTO(const double NN, const unsigned int aa, const unsigned int bb, const unsigned int cc, const double alphaa, const double xx, const double yy, const double zz)
+CGTO::CGTO(const unsigned int aa, const unsigned int bb, const unsigned int cc, \
+const double alphaa, const double xx, const double yy, const double zz)
 {
-    N = NN;
     a = aa;
     b = bb;
     c = cc;
     alpha = alphaa;
     r = cartesian(3,xx,yy,zz);
+    N = this->getN();
+}
+
+/*Normalization constant formula see,
+Mammoth/Supporting Papers
+
+Detailed derivation of Gaussian orbital based matrixelements 
+in electron structure calculations, by T. Petersson and B. Hellsing from Sweden
+
+*/
+inline double CGTO::getN() const
+{
+    //return 
 }

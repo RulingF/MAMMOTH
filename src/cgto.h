@@ -30,6 +30,7 @@ That is,
     -- alpha controls width of orbital
  */
 
+#include <cmath>
 #include "cartesian.h"
 
 class CGTO
@@ -41,7 +42,12 @@ class CGTO
         cartesian r;   
 
     public:
-        CGTO(const double NN, const unsigned int aa, const unsigned int bb, const unsigned int cc, const double alpha, const cartesian rr);//Constructor takes in cartesian instance
-        CGTO(const double NN, const unsigned int aa, const unsigned int bb, const unsigned int cc, const double alpha, const double xx, const double yy, const double zz);//Constructor takes in xyz
+        CGTO(const unsigned int aa, const unsigned int bb, const unsigned int cc, \
+        const double alpha, const cartesian rr);//Constructor takes in cartesian instance
+        CGTO(const unsigned int aa, const unsigned int bb, const unsigned int cc, \
+        const double alpha, const double xx, const double yy, const double zz);\
+        //Constructor takes in xyz
+    private:
+        inline double getN() const; //Calculate the normalization constant N
 };
 
