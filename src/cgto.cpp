@@ -28,6 +28,7 @@ CGTO::CGTO(const unsigned int aa, const unsigned int bb, const unsigned int cc,\
     a = aa;
     b = bb;
     c = cc;
+    L = aa + bb + cc;
     alpha = alphaa;
     r = rr;
     N = this->getN();
@@ -39,6 +40,7 @@ const double alphaa, const double xx, const double yy, const double zz)
     a = aa;
     b = bb;
     c = cc;
+    L = aa + bb + cc;
     alpha = alphaa;
     r = cartesian(3,xx,yy,zz);
     N = this->getN();
@@ -53,5 +55,8 @@ in electron structure calculations, by T. Petersson and B. Hellsing from Sweden
 */
 inline double CGTO::getN() const
 {
-    //return 
+    return pow(8,1.0/4.0+L/2.0)*pow(alpha,3.0/4.0+L/2.0)/(pow(phys_pi,3.0/4.0)*sqrt\
+    (arrang(2*a,a)*arrang(2*b,b)*arrang(2*c,c)));
+    //using less pow function calls is quicker, using pow(n,3.0/2.0) much better \
+    than sqrt(pow(n,3.0))
 }

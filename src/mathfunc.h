@@ -20,37 +20,20 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
-/*
-Cartesian Gaussian Type Orbitals (CGTOs) are defined by an angular part which is a 
-homogeneous polynomial in the components x, y, and z of the position vector r. 
-That is,
-    N * x^a * y^b * z^c * exp(-alpha * r^2) 
-    -- N is a normalization constant
-    -- Angular momentum L = a + b + c
-    -- alpha controls width of orbital
- */
+//#include <cmath>
 
-#include <cmath>
-#include "cartesian.h"
-#include "physconst.h"
-#include "mathfunc.h"
-
-class CGTO
+inline unsigned int permut(const unsigned int n)
 {
-    public:
-        double N; //Normalization constant
-        unsigned int L, a, b, c; //Angular momentum L = a + b + c
-        double alpha; //alpha controls width of orbital
-        cartesian r;   
+    return n <= 1 ? 1 : n*permut(n-1);
+}
 
-    public:
-        CGTO(const unsigned int aa, const unsigned int bb, const unsigned int cc, \
-        const double alpha, const cartesian rr);//Constructor takes in cartesian i\
-        nstance
-        CGTO(const unsigned int aa, const unsigned int bb, const unsigned int cc, \
-        const double alpha, const double xx, const double yy, const double zz);\
-        //Constructor takes in xyz
-    private:
-        inline double getN() const; //Calculate the normalization constant N
-};
+inline unsigned int arrang(const unsigned int n, const unsigned int m)
+{
+    return permut(n)/permut(n-m);
+}
 
+inline unsigned int combin(const unsigned int n, const unsigned int m)
+{
+    //cout << arrang(n,m) <<"\n" <<permut(m) << endl;
+    return arrang(n,m)/permut(m);
+}
