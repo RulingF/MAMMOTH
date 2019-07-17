@@ -23,11 +23,15 @@
 #include <vector>
 #include <string>
 #include "cartesian.h"
-#include "gto.h"
+#include "cgto.h"
+#include "sgto.h"
+#include "contr.h"
 
 class Basis
 {
     private:
         std::string basisset_name;
-        std::vector<GTO> gtos;//Gaussian type orbitals
-}
+        std::vector<CGTO> cgtos;//Cartesian Gaussian type orbitals
+        std::vector<SGTO> sgtos;//Spherical Gaussian type orbitals
+        std::vector<CONTR> contr;//Contraction coeffients
+};
