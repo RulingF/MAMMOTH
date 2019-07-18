@@ -21,3 +21,18 @@
 //  DEALINGS IN THE SOFTWARE.
 
 #include "sgto.h"
+
+namespace GTO
+{
+    SGTO::SGTO(){
+        l = 0;
+        m = 0;
+    }
+
+    SGTO::SGTO(const unsigned int ll, CGTO cgtoo) {}
+
+    void SGTO::func1()
+    {
+
+    }
+}

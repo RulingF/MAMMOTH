@@ -22,41 +22,44 @@
 
 #include "cgto.h"
 
-CGTO::CGTO(const unsigned int aa, const unsigned int bb, const unsigned int cc,\
- const double alphaa, const cartesian rr)
+namespace GTO
 {
-    a = aa;
-    b = bb;
-    c = cc;
-    L = aa + bb + cc;
-    alpha = alphaa;
-    r = rr;
-    N = this->getN();
-}
-
-CGTO::CGTO(const unsigned int aa, const unsigned int bb, const unsigned int cc, \
-const double alphaa, const double xx, const double yy, const double zz)
-{
-    a = aa;
-    b = bb;
-    c = cc;
-    L = aa + bb + cc;
-    alpha = alphaa;
-    r = cartesian(3,xx,yy,zz);
-    N = this->getN();
-}
-
-/*Normalization constant formula see,
-Mammoth/Supporting Papers
-
-Detailed derivation of Gaussian orbital based matrixelements 
-in electron structure calculations, by T. Petersson and B. Hellsing from Sweden
-
-*/
-inline double CGTO::getN() const
-{
-    return pow(8,1.0/4.0+L/2.0)*pow(alpha,3.0/4.0+L/2.0)/(pow(phys_pi,3.0/4.0)*sqrt\
-    (arrang(2*a,a)*arrang(2*b,b)*arrang(2*c,c)));
-    //using less pow function calls is quicker, using pow(n,3.0/2.0) much better \
-    than sqrt(pow(n,3.0))
-}
+    CGTO::CGTO(const unsigned int aa, const unsigned int bb, const unsigned int cc,
+               const double alphaa, const cartesian rr)
+    {
+        a = aa;
+        b = bb;
+        c = cc;
+        l = aa + bb + cc;
+        alpha = alphaa;
+        r = rr;
+        N = this->getN();
+    }
+    
+    CGTO::CGTO(const unsigned int aa, const unsigned int bb, const unsigned int cc,
+               const double alphaa, const double xx, const double yy, const double zz)
+    {
+        a = aa;
+        b = bb;
+        c = cc;
+        l = aa + bb + cc;
+        alpha = alphaa;
+        r = cartesian(3, xx, yy, zz);
+        N = this->getN();
+    }
+    
+    /*Normalization constant formula see,
+    Mammoth/Supporting Papers
+    
+    Detailed derivation of Gaussian orbital based matrixelements 
+    in electron structure calculations, by T. Petersson and B. Hellsing from Sweden
+    
+    */
+    inline double CGTO::getN() const
+    {
+        return pow(8, 1.0 / 4.0 + l / 2.0) * pow(alpha, 3.0 / 4.0 + l / 2.0) / (pow(phys_pi,\
+         3.0 / 4.0) * sqrt(arrang(2 * a, a) * arrang(2 * b, b) * arrang(2 * c, c)));
+        //using less pow function calls is quicker, using pow(n,3.0/2.0) much better \
+        than sqrt(pow(n,3.0))
+    }
+} // namespace GTO

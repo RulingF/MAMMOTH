@@ -31,7 +31,9 @@ class Basis
 {
     private:
         std::string basisset_name;
-        std::vector<CGTO> cgtos;//Cartesian Gaussian type orbitals
-        std::vector<SGTO> sgtos;//Spherical Gaussian type orbitals
+        std::vector<GTO::CGTO> cgtos;//Cartesian Gaussian type orbitals, primitives
+        std::vector<GTO::SGTO> sgtos;//Spherical Gaussian type orbitals, primitives
         std::vector<CONTR> contr;//Contraction coeffients
+    //public:
+
 };

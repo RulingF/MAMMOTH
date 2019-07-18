@@ -22,10 +22,30 @@
 
 /*
 Spherical Gaussian Type Orbitals (SGTOs) are defined by 
+linear combinations of Cartesian Gaussian Type Orbitals(CGTOs)
+From
+Transformation Between Cartesian and Pure Spherical Harmonic Gaussians, by
+H. Bernhard Schlegel and Michael J. Frisch, 1995
+DOI: 10.1002/qua.560540202
 
 */
 
-class SGTO
-{
+#include "cgto.h"
 
-};
+
+namespace GTO
+{
+    class SGTO
+    {
+        private:
+            unsigned int l, m; //angular momentum quantum number l and magnetic quantum\
+            number m
+            CGTO cgto;//Cartesian Gaussian Type orbitals
+
+        public:
+            SGTO();//Default constructor
+            SGTO(const unsigned int ll, CGTO cgtoo);//Constructor
+            void func1();
+
+    };
+}

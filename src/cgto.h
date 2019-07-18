@@ -23,10 +23,10 @@
 /*
 Cartesian Gaussian Type Orbitals (CGTOs) are defined by an angular part which is a 
 homogeneous polynomial in the components x, y, and z of the position vector r. 
-That is,
+That is,.
     N * x^a * y^b * z^c * exp(-alpha * r^2) 
     -- N is a normalization constant
-    -- Angular momentum L = a + b + c
+    -- Angular momentum l = a + b + c
     -- alpha controls width of orbital
 */
 
@@ -35,22 +35,26 @@ That is,
 #include "physconst.h"
 #include "mathfunc.h"
 
-class CGTO
+namespace GTO
 {
-    public:
-        double N; //Normalization constant
-        unsigned int L, a, b, c; //Angular momentum L = a + b + c
-        double alpha; //alpha controls width of orbital
-        cartesian r;   
+    class CGTO
+    {
+        public:
+            double N; //Normalization constant
+            unsigned int l, a, b, c; //Angular momentum l = a + b + c
+            double alpha; //alpha controls width of orbital
+            cartesian r;   
 
-    public:
-        CGTO(const unsigned int aa, const unsigned int bb, const unsigned int cc, \
-        const double alpha, const cartesian rr);//Constructor takes in cartesian i\
-        nstance
-        CGTO(const unsigned int aa, const unsigned int bb, const unsigned int cc, \
-        const double alpha, const double xx, const double yy, const double zz);\
-        //Constructor takes in xyz
-    private:
-        inline double getN() const; //Calculate the normalization constant N
-};
+        public:
+            CGTO(const unsigned int aa, const unsigned int bb, const unsigned int cc, \
+            const double alpha, const cartesian rr);//Constructor takes in cartesian i\
+            nstance
+            CGTO(const unsigned int aa, const unsigned int bb, const unsigned int cc, \
+            const double alpha, const double xx, const double yy, const double zz);\
+            //Constructor takes in xyz
+        private:
+            inline double getN() const; //Calculate the normalization constant N
+    };
+    class 
+}
 
