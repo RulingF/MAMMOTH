@@ -48,4 +48,4 @@ namespace GTO
             void func1();
 
     };
-}
+}//namespace GTO

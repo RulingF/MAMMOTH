@@ -20,23 +20,4 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
-#include "sgto.h"
-
-namespace GTO
-{
-    SGTO::SGTO()
-    {
-        l = 0;
-        m = 0;
-    }
-
-    SGTO::SGTO(const unsigned int ll, CGTO cgtoo) 
-    {
-
-    }
-
-    void SGTO::func1()
-    {
-
-    }
-}//namepsace GTO
+/* code */

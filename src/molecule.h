@@ -20,23 +20,15 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
-#include "sgto.h"
+#include "atom.h"
 
-namespace GTO
+class Molecule
 {
-    SGTO::SGTO()
-    {
-        l = 0;
-        m = 0;
-    }
-
-    SGTO::SGTO(const unsigned int ll, CGTO cgtoo) 
-    {
-
-    }
-
-    void SGTO::func1()
-    {
-
-    }
-}//namepsace GTO
+    private:
+        std::vector<Atom> atoms;//atoms in the molecule
+        unsigned int nunpair;//number of unpaired electrons
+        int c, m;//charge c and spin multiplicity m = nunpair + 1
+    public:
+        Molecule();//Default Constructor
+        void read(std::string);
+};
