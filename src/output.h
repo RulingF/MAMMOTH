@@ -22,12 +22,17 @@
 
 #include <iostream>
 #include <fstream>
+#include "molecule.h"
+#include "input.h"
 
 class Output
 {
     private:
         std::ofstream output_file;
     public:
-        Output(std::string file_name); //Default constructor
-        void write_string(std::string input_string);//Write input_string in file
+        Output();//Default 
+        Output(std::string file_name); //constructor
+        void write_title(Input &in);//write title in file
+        void write_mol(Molecule &mol);//write molecule information in file
+        inline void write_string(std::string output_string);//Write input_string in file
 };

@@ -21,14 +21,17 @@
 //  DEALINGS IN THE SOFTWARE.
 
 #include "atom.h"
+#include "input.h"
 
 class Molecule
 {
     private:
         std::vector<Atom> atoms;//atoms in the molecule
+        unsigned int natoms;//number of atoms in the molecule
         unsigned int nunpair;//number of unpaired electrons
         int c, m;//charge c and spin multiplicity m = nunpair + 1
     public:
         Molecule();//Default Constructor
-        void read(std::string);
+        void addAtom(const Atom& at);
+        void read_file(const int cc, const int m, Input inputt);
 };

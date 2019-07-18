@@ -20,4 +20,18 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
-#include "molecule.h"
+#include <iostream>
+#include <fstream>
+
+class Input
+{
+    public:
+        std::istream input_file;
+        Input();//Default 
+        Input(std::string file_name);//constructor
+        std::string title;//job title
+        std::string geo;//string to store geometry
+        std::string cm;//string to store charge c and spin multiplicity m
+        std::string basis;//string to specify basis set for each element
+        std::string han;//string to specify Hamiltonian
+};
