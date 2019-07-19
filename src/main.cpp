@@ -49,4 +49,6 @@ int main(int argc, char *argv[])
     string test;
     getline(std::cin,test);
 
+    Input in1("file_name");
+    Input in2=Input("file_name");
 }

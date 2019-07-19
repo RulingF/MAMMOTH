@@ -36,7 +36,6 @@ Input::Input(std::string file_name)
 {
     this->init();
     this->filename = file_name;
-    
 }
 
 void Input::init()
