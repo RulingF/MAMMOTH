@@ -19,19 +19,46 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
+/*The format of the input file, recommended extension for input file: *.com
+[Title]
+Basis, start
+[Basis set name for each element]
+Basis, end
+[charge],[spin multiplicity]
+Geometry, start
+[cartesian xyz]
+Geometry, end
+Hamiltonian = Regular
+ */
 
 #include <iostream>
 #include <fstream>
+#include <vector>
+#include <string>
 
 class Input
 {
+    private:
+        std::string filename;
+        std::vector<std::string> lines_infile;//vector of string for each line in input file
+        bool isOpen; //If the input file is open
     public:
-        std::istream input_file;
-        Input();//Default 
+        Input();//Default constructor
+        ~Input();//Default destructor
         Input(std::string file_name);//constructor
+        std::ifstream input_file;
+        void load();//load strings in lines_infile into the following string objects
         std::string title;//job title
-        std::string geo;//string to store geometry
-        std::string cm;//string to store charge c and spin multiplicity m
         std::string basis;//string to specify basis set for each element
-        std::string han;//string to specify Hamiltonian
+        std::string cm;//string to store charge c and spin multiplicity m
+        std::string geo;//string to store geometry
+        std::string han;//string to specify Hamiltonian, this is for test
+    public:
+        std::vector<std::string> error_m;//vector of strings to store all the error message generately from reading files
+    private:
+        void init(); //inialization functions
+        void open(); //open the file
+        void read(); //read the file
+        void close();//close the file
+        void reset();//resets the pointer to the start of the file
 };

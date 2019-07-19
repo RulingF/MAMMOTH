@@ -21,3 +21,77 @@
 //  DEALINGS IN THE SOFTWARE.
 
 #include "input.h"
+
+Input::Input()
+{
+    this->init();
+}
+
+Input::~Input()
+{
+    this->close();
+}
+
+Input::Input(std::string file_name)
+{
+    this->init();
+    this->filename = file_name;
+    
+}
+
+void Input::init()
+{
+    isOpen = false;
+}
+
+void Input::open()
+{
+    if(!isOpen)
+    {
+        isOpen = true;
+        input_file.open(filename);
+    } 
+    else
+    {
+        error_m.push_back("Error, the file has already been opened!");
+    }
+}
+
+void Input::read()
+{
+    this->open();
+    std::string line;
+    if(input_file.is_open())
+    {
+        while(input_file.good())
+        {
+            getline(input_file,line);
+            lines_infile.push_back(line);
+        }
+
+    }
+    else
+    {
+        error_m.push_back("Error, the file can't be opened!");
+    }
+    
+
+}
+
+void Input::close()
+{
+    if(isOpen)
+    {
+        input_file.close();
+    }
+}
+
+void Input::reset()
+{
+    this->input_file.seekg(0);
+}
+
+void Input::load()
+{
+    
+}

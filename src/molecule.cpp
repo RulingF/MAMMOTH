@@ -21,3 +21,8 @@
 //  DEALINGS IN THE SOFTWARE.
 
 #include "molecule.h"
+
+Molecule::Molecule()
+{
+    
+}
