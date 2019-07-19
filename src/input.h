@@ -46,7 +46,7 @@ class Input
         Input();//Default constructor
         ~Input();//Default destructor
         Input(std::string file_name);//constructor
-        std::ifstream input_file;
+        //std::ifstream input_file;
         void load();//load strings in lines_infile into the following string objects
         std::string title;//job title
         std::string basis;//string to specify basis set for each element
@@ -58,7 +58,7 @@ class Input
     private:
         void init(); //inialization functions
         void open(); //open the file
-        void read(); //read the file
-        void close();//close the file
-        void reset();//resets the pointer to the start of the file
+        //void read(); //read the file
+        //void close();//close the file
+        //void reset();//resets the pointer to the start of the file
 };

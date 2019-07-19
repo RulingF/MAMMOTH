@@ -29,7 +29,7 @@ Input::Input()
 
 Input::~Input()
 {
-    this->close();
+    //this->close();
 }
 
 Input::Input(std::string file_name)
@@ -45,6 +45,7 @@ void Input::init()
 
 void Input::open()
 {
+    std::ifstream input_file;
     if(!isOpen)
     {
         isOpen = true;
@@ -54,11 +55,6 @@ void Input::open()
     {
         error_m.push_back("Error, the file has already been opened!");
     }
-}
-
-void Input::read()
-{
-    this->open();
     std::string line;
     if(input_file.is_open())
     {
@@ -73,21 +69,6 @@ void Input::read()
     {
         error_m.push_back("Error, the file can't be opened!");
     }
-    
-
-}
-
-void Input::close()
-{
-    if(isOpen)
-    {
-        input_file.close();
-    }
-}
-
-void Input::reset()
-{
-    this->input_file.seekg(0);
 }
 
 void Input::load()
