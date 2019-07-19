@@ -19,7 +19,7 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
-/*The format of the input file, recommended extension for input file: *.com
+/*The very fixed format of the input file, recommended extension for input file: *.com
 [Title]
 Basis, start
 [Basis set name for each element]

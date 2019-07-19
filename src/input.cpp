@@ -93,5 +93,10 @@ void Input::reset()
 
 void Input::load()
 {
-    
+    unsigned int i = 0;
+    for(std::string line : lines_infile)
+    {
+        if(i == 0)
+            this->title = line;
+    }
 }
