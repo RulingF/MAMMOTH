@@ -22,7 +22,7 @@
 /*The very fixed format of the input file, recommended extension for input file: *.com
 [Title]
 Basis, start
-[Basis set name for each element]
+[Basis set name for each element, one line] (Example: H=STO-3G, O=STO-3G)
 Basis, end
 [charge],[spin multiplicity]
 Geometry, start
@@ -51,7 +51,7 @@ class Input
         std::string title;//job title
         std::string basis;//string to specify basis set for each element
         std::string cm;//string to store charge c and spin multiplicity m
-        std::string geo;//string to store geometry
+        std::vector<std::string> geo;//string to store geometry
         std::string han;//string to specify Hamiltonian, this is for test
     public:
         std::vector<std::string> error_m;//vector of strings to store all the error message generately from reading files

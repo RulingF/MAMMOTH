@@ -75,7 +75,7 @@ void Input::open()
 
 void Input::load()
 {
-    unsigned int i = 0;
+    unsigned int i = 0, igeo_start = 0, igeo_end = 0;
     for(std::string line : lines_infile)
     {
         if(0 == i)
@@ -84,6 +84,21 @@ void Input::load()
             this->basis = line;
         if(4 == i)
             this->cm = line;
+        if(line.find("Geometry, start")!=std::string::npos)
+            igeo_start = i;
+        if(line.find("Geometry, end")!=std::string::npos)
+        //std::string::npos is the largest possible value of type_size(string)
+            igeo_end = i;
         ++i;
-    }
+    } //Find title, basis, cm, and the start/end line number of the geometry block
+
+    i = 0; // Initialize i
+    for(std::string line : lines_infile)
+    {
+        if(i > igeo_start and i < igeo_end)
+            this->geo.push_back(line);
+        if(i == igeo_end + 1)
+            this->han = line;
+        ++i;
+    } //Use igeo_start/igeo_end to store geometry block, and find han
 }
