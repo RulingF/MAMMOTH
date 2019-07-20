@@ -36,6 +36,8 @@ Input::Input(std::string file_name)
 {
     this->init();
     this->filename = file_name;
+    this->open();
+    this->load();
 }
 
 void Input::init()
@@ -76,7 +78,12 @@ void Input::load()
     unsigned int i = 0;
     for(std::string line : lines_infile)
     {
-        if(i == 0)
+        if(0 == i)
             this->title = line;
+        if(2 == i)
+            this->basis = line;
+        if(4 == i)
+            this->cm = line;
+        ++i;
     }
 }
