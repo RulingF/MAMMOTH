@@ -38,6 +38,7 @@ Hamiltonian = Regular
 
 class Input
 {
+    static unsigned int han;//string to specify Hamiltonian, this is for test
     private:
         std::string filename;
         std::vector<std::string> lines_infile;//vector of string for each line in input file
@@ -52,7 +53,6 @@ class Input
         std::string basis;//string to specify basis set for each element
         std::string cm;//string to store charge c and spin multiplicity m
         std::vector<std::string> geo;//string to store geometry
-        std::string han;//string to specify Hamiltonian, this is for test
     public:
         std::vector<std::string> error_m;//vector of strings to store all the error message generately from reading files
     private:

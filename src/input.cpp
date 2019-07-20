@@ -43,6 +43,7 @@ Input::Input(std::string file_name)
 void Input::init()
 {
     isOpen = false;
+    han = 1;
 }
 
 void Input::open()
@@ -98,7 +99,8 @@ void Input::load()
         if(i > igeo_start and i < igeo_end)
             this->geo.push_back(line);
         if(i == igeo_end + 1)
-            this->han = line;
+            if(line.find("Regular")!=std::string::npos)
+                han = 1;
         ++i;
     } //Use igeo_start/igeo_end to store geometry block, and find han
 }

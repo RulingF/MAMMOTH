@@ -29,9 +29,15 @@ class Molecule
         std::vector<Atom> atoms;//atoms in the molecule
         unsigned int natoms;//number of atoms in the molecule
         unsigned int nunpair;//number of unpaired electrons
-        int c, m;//charge c and spin multiplicity m = nunpair + 1
+        int c;//charge c
+        unsigned int m;//spin multiplicity m = nunpair + 1
+        unsigned int han;//Hamiltonian option, mainly controls the integral code
     public:
         Molecule();//Default Constructor
         void addAtom(const Atom& at);
-        void read_file(const int cc, const int m, Input inputt);
+        void parse_input(const int cc, const int m, Input inputt);
+        void findnatoms();
+        void findcm();
+        void findnunpair();
+
 };

@@ -37,10 +37,11 @@ class Atom
         unsigned int nelec;//number of electrons
         cartesian r;//cartesian coordinate of atom
         double atomic_mass;//atomic mass, not that the default is the most abundant isotope
+        Basis basis;
         
     public:
-        Atom(const int Z, const double xx,const double yy, const double zz);//constructor that takes the atomic number
-        Atom(const string element, const double xx,const double yy, const double zz);//constructor that takes the element symbol
+        Atom(const unsigned int Z, const double xx,const double yy, const double zz, Basis &basis);//constructor that takes the atomic number
+        Atom(const string element, const double xx,const double yy, const double zz, Basis &basis);//constructor that takes the element symbol
 
 };
 

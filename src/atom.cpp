@@ -22,7 +22,7 @@
 
 #include "atom.h"
 
-Atom::Atom(const int Z, const double xx,const double yy, const double zz)
+Atom::Atom(const unsigned int Z, const double xx,const double yy, const double zz, Basis &basis)
 {
     atomic_num_Z = Z;
     element_symbol = all_element_symbols[Z];
@@ -33,7 +33,7 @@ Atom::Atom(const int Z, const double xx,const double yy, const double zz)
 
 }
 
-Atom::Atom(const string element, const double xx,const double yy, const double zz)
+Atom::Atom(const string element, const double xx,const double yy, const double zz, Basis &basis)
 {
     char elee[element.length()];
     strcpy(elee,element.c_str());
