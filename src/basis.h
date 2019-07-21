@@ -34,6 +34,6 @@ class Basis
         std::vector<GTO::CGTO> cgtos;//Cartesian Gaussian type orbitals, primitives
         std::vector<GTO::SGTO> sgtos;//Spherical Gaussian type orbitals, primitives
         std::vector<CONTR> contr;//Contraction coeffients
-    //public:
+    public:
 
 };

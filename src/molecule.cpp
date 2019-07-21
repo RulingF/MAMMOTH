@@ -24,10 +24,33 @@
 
 Molecule::Molecule(const Input &input)
 {
-    Atom oneatom = Atom()
+    this->findcm(input.cm);
+    this->findnunpair();
+    this->findbasis(input.basis);
+
+    std::string element;
+    double xx,yy,zz;
+    Basis basis;
+
+    Atom oneatom = Atom(element,xx,yy,zz,basis);
 }
 
 void Molecule::addAtom(const Atom& at)
 {
     atoms.push_back(at);
+}
+
+void Molecule:: findbasis(std::string basisstring)
+{
+    //this->basisname 
+}
+
+void Molecule::findcm(std::string cmstring)
+{
+
+}
+
+void Molecule::findnunpair()
+{
+    this->nunpair = this->m - 1;
 }
