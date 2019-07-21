@@ -22,6 +22,7 @@
 
 #include "atom.h"
 #include "input.h"
+#include <unordered_map>
 
 class Molecule
 {
@@ -33,11 +34,11 @@ class Molecule
         unsigned int m;//spin multiplicity m = nunpair + 1
         unsigned int han;//Hamiltonian option, mainly controls the integral code
     public:
-        Molecule();//Default Constructor
-        void addAtom(const Atom& at);
-        void parse_input(const int cc, const int m, Input inputt);
-        void findnatoms();
-        void findcm();
+        Molecule(const Input &input);//Constructor
+        void addAtom(const Atom& at);//add atoms into std::vector<Atom> atoms
+        std::unordered_map<std::string, std::string> findbasis(std::string basisstring);
+        //basisstring from input.basis
+        void findcm(std::string cmstring);//cmstring from input.cm
         void findnunpair();
 
 };

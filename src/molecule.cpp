@@ -22,7 +22,12 @@
 
 #include "molecule.h"
 
-Molecule::Molecule()
+Molecule::Molecule(const Input &input)
 {
-    
+    Atom oneatom = Atom()
+}
+
+void Molecule::addAtom(const Atom& at)
+{
+    atoms.push_back(at);
 }
