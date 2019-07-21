@@ -20,28 +20,7 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
-#include <unordered_map>
-#include "atom.h"
-#include "input.h"
-#include "initialisation.h" 
+#include <string>
 
+static const std::string BASISSET_LIB = "./basislib/";
 
-class Molecule
-{
-    private:
-        std::vector<Atom> atoms;//atoms in the molecule
-        std::unordered_map<std::string, std::string> basisname;
-        //basis set name for each element stored in an unordered map
-        unsigned int natoms;//number of atoms in the molecule
-        unsigned int nunpair;//number of unpaired electrons
-        int c;//charge c
-        unsigned int m;//spin multiplicity m = nunpair + 1
-        unsigned int han;//Hamiltonian option, mainly controls the integral code
-    public:
-        Molecule(const Input &input);//Constructor
-        void addAtom(const Atom& at);//add atoms into std::vector<Atom> atoms
-        void findbasis(std::string basisstring);//basisstring from input.basis
-        void findcm(std::string cmstring);//cmstring from input.cm
-        void findnunpair();
-
-};

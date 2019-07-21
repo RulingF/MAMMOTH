@@ -35,5 +35,8 @@ class Basis
         std::vector<GTO::SGTO> sgtos;//Spherical Gaussian type orbitals, primitives
         std::vector<CONTR> contr;//Contraction coeffients
     public:
-
+        Basis(std::string name, std::string path);//basis set library path
+        void load_cgtos();
+        void load_sgtos_from_cgtos();
+        void load_contr();
 };

@@ -30,7 +30,7 @@ Molecule::Molecule(const Input &input)
 
     std::string element;
     double xx,yy,zz;
-    Basis basis;
+    Basis basis(this->basisname[element],BASISSET_LIB);
 
     Atom oneatom = Atom(element,xx,yy,zz,basis);
 }
