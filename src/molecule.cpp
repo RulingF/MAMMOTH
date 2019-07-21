@@ -28,11 +28,19 @@ Molecule::Molecule(const Input &input)
     this->findnunpair();
     this->findbasis(input.basis);
 
+    //start load the geometry block
     std::string element;
     double xx,yy,zz;
-    Basis basis(this->basisname[element],BASISSET_LIB);
+    Basis basis;
 
-    Atom oneatom = Atom(element,xx,yy,zz,basis);
+    for(std::string line:input.geo)
+    {
+        //find method to split line into parts
+        basis = Basis(this->basisname[element],BASISSET_LIB);
+        Atom oneatom = Atom(element,xx,yy,zz,basis);
+        this->addAtom(oneatom);
+    }
+    //end load the geometry block
 }
 
 void Molecule::addAtom(const Atom& at)
