@@ -22,6 +22,7 @@
 
 #include <vector>
 #include <string>
+#include <fstream>
 #include "cartesian.h"
 #include "cgto.h"
 #include "sgto.h"
@@ -30,10 +31,14 @@
 class Basis
 {
     private:
+        std::string element_name; //name of the element
         std::string basisset_name;
         std::vector<GTO::CGTO> cgtos;//Cartesian Gaussian type orbitals, primitives
         std::vector<GTO::SGTO> sgtos;//Spherical Gaussian type orbitals, primitives
         std::vector<CONTR> contr;//Contraction coeffients
+    public:
+        std::vector<std::string> error_m;
+        //vector of strings to store all the error message generately from reading files
     public:
         Basis();//Default constructor
         Basis(std::string name, std::string path);//basis set library path

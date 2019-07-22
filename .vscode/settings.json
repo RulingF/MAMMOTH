@@ -52,6 +52,10 @@
         "tuple": "cpp",
         "type_traits": "cpp",
         "typeinfo": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "__hash_table": "cpp",
+        "__node_handle": "cpp",
+        "optional": "cpp",
+        "unordered_map": "cpp"
     }
 }

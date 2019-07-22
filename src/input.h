@@ -54,7 +54,8 @@ class Input
         std::string cm;//string to store charge c and spin multiplicity m
         std::vector<std::string> geo;//string to store geometry
     public:
-        std::vector<std::string> error_m;//vector of strings to store all the error message generately from reading files
+        std::vector<std::string> error_m;
+        //vector of strings to store all the error message generately from reading files
     private:
         void init(); //inialization functions
         void open(); //open the file

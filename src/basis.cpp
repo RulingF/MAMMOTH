@@ -21,3 +21,38 @@
 //  DEALINGS IN THE SOFTWARE.
 
 #include "basis.h"
+
+Basis::Basis(std::string name, std::string path)
+{
+    this->basisset_name = name;
+    std::ifstream basissetfile(name);
+    std::string line;
+
+    if(basissetfile.is_open())
+    {
+        while(basissetfile.good())
+        {
+            getline(basissetfile,line);
+        }
+    }
+    else
+    {
+         error_m.push_back("Error, the basis set file can't be opened!");
+    }
+
+}
+
+void Basis::load_cgtos()
+{
+    
+}
+
+void Basis::load_sgtos_from_cgtos()
+{
+
+}
+
+void Basis::load_contr()
+{
+
+}
