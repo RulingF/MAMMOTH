@@ -36,7 +36,7 @@ Molecule::Molecule(const Input &input)
     for(std::string line:input.geo)
     {
         //find method to split line into parts
-        basis = Basis(this->basisname[element],BASISSET_LIB);
+        basis = Basis(element, this->basisname[element], BASISSET_LIB);
         Atom oneatom = Atom(element,xx,yy,zz,basis);
         this->addAtom(oneatom);
     }

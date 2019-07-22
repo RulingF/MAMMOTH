@@ -22,10 +22,11 @@
 
 #include "basis.h"
 
-Basis::Basis(std::string name, std::string path)
+Basis::Basis(std::string elename, std::string basisname, std::string path)
 {
-    this->basisset_name = name;
-    std::ifstream basissetfile(name);
+    this->basisset_name = basisname;
+    this->element_name = elename;
+    std::ifstream basissetfile(path);
     std::string line;
 
     if(basissetfile.is_open())
