@@ -27,6 +27,7 @@ Molecule::Molecule(const Input &input)
     this->findcm(input.cm);
     this->findnunpair();
     this->findbasis(input.basis);
+    this->han = input.han;
 
     //start load the geometry block
     std::vector <std::string> linesplitelements;
@@ -57,6 +58,14 @@ void Molecule::addAtom(const Atom& at)
 
 void Molecule:: findbasis(std::string basisstring)
 {
+    std::vector <std::string> linesplitelements;
+    linesplitelements = split_line(basisstring, ",");
+    std::vector <std::string> ele_pair;
+    for(std::string ele : linesplitelements)
+    {
+        ele_pair = split_line(ele,"=");
+        this->basisname[ele_pair[0]] = ele_pair[1];
+    }
     //this->basisname 
 }
 

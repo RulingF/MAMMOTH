@@ -100,7 +100,7 @@ void Input::load()
             this->geo.push_back(line);
         if(i == igeo_end + 1)
             if(line.find("Regular")!=std::string::npos)
-                han = 1;
+                this->han = 1;
         ++i;
     } //Use igeo_start/igeo_end to store geometry block, and find han
 }
