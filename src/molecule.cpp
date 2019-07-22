@@ -37,6 +37,12 @@ Molecule::Molecule(const Input &input)
     for(std::string line:input.geo)
     {
         linesplitelements = split_line(line, ",");
+        element = linesplitelements[0];
+        xx = atof(linesplitelements[1].c_str());
+        yy = atof(linesplitelements[2].c_str());
+        zz = atof(linesplitelements[3].c_str());
+        /*c_str is needed to convert string to const char*
+         previously (the function requires it)*/
         basis = Basis(element, this->basisname[element], BASISSET_LIB);
         Atom oneatom = Atom(element,xx,yy,zz,basis);
         this->addAtom(oneatom);
@@ -56,7 +62,12 @@ void Molecule:: findbasis(std::string basisstring)
 
 void Molecule::findcm(std::string cmstring)
 {
-
+    std::vector <std::string> linesplitelements;
+    linesplitelements = split_line(cmstring, ",");
+    this->c = atoi(linesplitelements[0].c_str());
+    this->m = static_cast<unsigned int> (atoi(linesplitelements[1].c_str()));
+    /*c_str is needed to convert string to const char*
+    previously (the function requires it)*/
 }
 
 void Molecule::findnunpair()
