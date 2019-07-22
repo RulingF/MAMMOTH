@@ -20,29 +20,39 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
-#include <unordered_map>
-#include "atom.h"
-#include "input.h"
-#include "initialisation.h" 
-#include "lineprocess.h"
+#include <string>
+#include <vector>
 
-
-class Molecule
+std::string erasecharacter(std::string ss,char c)
+//erase all character c's from the string ss, return ss
 {
-    private:
-        std::vector<Atom> atoms;//atoms in the molecule
-        std::unordered_map<std::string, std::string> basisname;
-        //basis set name for each element stored in an unordered map
-        unsigned int natoms;//number of atoms in the molecule
-        unsigned int nunpair;//number of unpaired electrons
-        int c;//charge c
-        unsigned int m;//spin multiplicity m = nunpair + 1
-        unsigned int han;//Hamiltonian option, mainly controls the integral code
-    public:
-        Molecule(const Input &input);//Constructor
-        void addAtom(const Atom& at);//add atoms into std::vector<Atom> atoms
-        void findbasis(std::string basisstring);//basisstring from input.basis
-        void findcm(std::string cmstring);//cmstring from input.cm
-        void findnunpair();
+    while(ss.find(c)!= std::string::npos)
+    {
+        ss.erase(ss.find(c),1);
+    }
+    return ss;
+}
 
-};
+std::vector <std::string> split_line(std::string ll, std::string dd)
+//split a string ll using delimiter dd and return a string vector
+{
+    std::string s = ll;
+    std::string delimiter = dd;
+    std::vector <std::string> returnvector;
+
+    size_t pos = 0;
+    std::string token;
+    while ((pos = s.find(delimiter)) != std::string::npos) 
+    {
+        token = s.substr(0, pos);
+        token = erasecharacter(token,' ');
+        returnvector.push_back(token);
+        //std::cout << token << std::endl;
+        s.erase(0, pos + delimiter.length());
+    }
+    s = erasecharacter(s,' ');
+    returnvector.push_back(s);
+
+    return returnvector;
+    //std::cout << s << std::endl;
+}

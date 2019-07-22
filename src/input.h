@@ -26,7 +26,7 @@ Basis, start
 Basis, end
 [charge],[spin multiplicity]
 Geometry, start
-[cartesian xyz]
+[cartesian xyz](Example: Al, 0.000, 0.001, 0.002)
 Geometry, end
 Hamiltonian = Regular
  */

@@ -29,13 +29,14 @@ Molecule::Molecule(const Input &input)
     this->findbasis(input.basis);
 
     //start load the geometry block
+    std::vector <std::string> linesplitelements;
     std::string element;
     double xx,yy,zz;
     Basis basis;
 
     for(std::string line:input.geo)
     {
-        //find method to split line into parts
+        linesplitelements = split_line(line, ",");
         basis = Basis(element, this->basisname[element], BASISSET_LIB);
         Atom oneatom = Atom(element,xx,yy,zz,basis);
         this->addAtom(oneatom);
