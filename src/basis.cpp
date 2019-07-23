@@ -170,7 +170,7 @@ std::vector<double> Basis::addonecontraction(std::vector <std::string> &tmplist)
 {
     unsigned int n = this->cgtos_map["s"].size();
     /* number of primitives (not number of functions,
-    since functions have to include m_j functions*/
+    since functions will include m_j functions*/
     
 
 }
