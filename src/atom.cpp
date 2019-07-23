@@ -44,6 +44,18 @@ Atom::Atom(const unsigned int Z, const double xx,const double yy, const double z
 
 }
 
+Atom::Atom(const unsigned int Z, const cartesian rr, Basis &basiss)
+{
+    atomic_num_Z = Z;
+    element_symbol = all_element_symbols[Z];
+    nelec = Z;
+    atomic_mass = all_atomic_masses[Z]; //Default atomic mass is the most adundant isotope
+
+    r = rr;//Copy costructor
+    this->basis = basiss;
+
+}
+
 Atom::Atom(const string element, const double xx,const double yy, const double zz, Basis &basiss)
 {
     char elee[element.length()];
@@ -58,7 +70,22 @@ Atom::Atom(const string element, const double xx,const double yy, const double z
 
     r = cartesian(3, xx, yy, zz);//3 mean it's 3-dimensional cartesian coordinate
     this->basis = basiss;
-    
+}
+
+Atom::Atom(const string element, const cartesian rr, Basis &basiss)
+{
+    char elee[element.length()];
+    strcpy(elee,element.c_str());
+    //Above two lines for converting string to char *
+    unsigned int Z = ele2Z(elee);
+    //To keep the same style
+    atomic_num_Z = Z;
+    element_symbol = element;
+    nelec = Z;
+    atomic_mass = all_atomic_masses[Z]; //Default atomic mass is the most adundant isotope
+
+    r = rr;//Copy costructor
+    this->basis = basiss;
 }
 
 std::string Atom::output_info()

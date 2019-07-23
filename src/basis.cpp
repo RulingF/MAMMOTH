@@ -22,30 +22,53 @@
 
 #include "basis.h"
 
-Basis::Basis(std::string elename, std::string basisname, std::string path)
+Basis::Basis(std::string elename, std::string basisname, std::string path, const double xx, const double yy, const double zz)
 {
     this->basisset_name = basisname;
     this->element_name = elename;
-    std::ifstream basissetfile(path+"basisname"+".basis");
-    std::string line;
+    cartesian rr = cartesian(3,xx,yy,zz);
+    this->load_cgtos(path,rr);
+}
+
+Basis::Basis(std::string elename, std::string basisname, std::string path, cartesian rr)
+{
+    this->basisset_name = basisname;
+    this->element_name = elename;
+    this->load_cgtos(path,rr);
+}
+
+void Basis::load_cgtos(std::string path, cartesian rr)
+{
+    std::string line;//tmp line
+    std::vector<std::string> tmplist;//tmp list to store splited line
+    std::ifstream basissetfile(path + basisset_name + ".basis");
 
     if(basissetfile.is_open())
     {
         while(basissetfile.good())
         {
             getline(basissetfile,line);
+            tmplist = split_line(line,",");
+            if(tmplist[1] == element_name and tmplist[0] == "s")
+                this->addsfunction;
+            if(tmplist[1] == element_name and tmplist[0] == "p")
+                this->addpfunction;
+            if(tmplist[1] == element_name and tmplist[0] == "d")
+                this->adddfunction;
+            if(tmplist[1] == element_name and tmplist[0] == "f")
+                this->addffunction;
+            if(tmplist[1] == element_name and tmplist[0] == "g")
+                this->addgfunction;
+            if(tmplist[1] == element_name and tmplist[0] == "h")
+                this->addhfunction;
+            if(tmplist[1] == element_name and tmplist[0] == "i")
+                this->addifunction;
         }
     }
     else
     {
          error_m.push_back("Error, the basis set file can't be opened!");
-    }
-
-}
-
-void Basis::load_cgtos()
-{
-    
+    }  
 }
 
 void Basis::load_sgtos_from_cgtos()

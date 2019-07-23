@@ -45,7 +45,7 @@ Molecule::Molecule(const Input &input)
         zz = atof(linesplitelements[3].c_str());
         /*c_str is needed to convert string to const char*
          previously (the function requires it)*/
-        basis = Basis(element, this->basisname[element], BASISSET_LIB);
+        basis = Basis(element, this->basisname[element], BASISSET_LIB, xx, yy, zz);
         Atom oneatom = Atom(element,xx,yy,zz,basis);
         this->addAtom(oneatom);
         numberofatoms_cout += 1;

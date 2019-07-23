@@ -25,7 +25,7 @@
 namespace GTO
 {
     CGTO::CGTO(const unsigned int aa, const unsigned int bb, const unsigned int cc,
-               const double alphaa, const cartesian rr)
+     const double alphaa, const cartesian rr)
     {
         a = aa;
         b = bb;
@@ -37,7 +37,7 @@ namespace GTO
     }
     
     CGTO::CGTO(const unsigned int aa, const unsigned int bb, const unsigned int cc,
-               const double alphaa, const double xx, const double yy, const double zz)
+     const double alphaa, const double xx, const double yy, const double zz)
     {
         a = aa;
         b = bb;

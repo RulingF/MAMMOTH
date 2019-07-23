@@ -23,26 +23,36 @@
 #include <vector>
 #include <string>
 #include <fstream>
+#include <unordered_map>
 #include "cartesian.h"
 #include "cgto.h"
 #include "sgto.h"
-#include "contr.h"
+#include "lineprocess.h"
 
 class Basis
 {
     private:
         std::string element_name, basisset_name;//name of the element and name of the basis
-        std::vector<GTO::CGTO> cgtos;//Cartesian Gaussian type orbitals, primitives
-        std::vector<GTO::SGTO> sgtos;//Spherical Gaussian type orbitals, primitives
-        std::vector<CONTR> contr;//Contraction coeffients
+        std::unordered_map<std::string,std::vector<GTO::CGTO>> cgtos_map;//Cartesian Gaussian type orbitals, primitives
+        std::unordered_map<std::string,std::vector<GTO::SGTO>> sgtos_map;//Spherical Gaussian type orbitals, primitives
+        std::unordered_map<std::string,std::vector<std::vector<double>>> contr_map;//Contraction coeffients
     public:
         std::vector<std::string> error_m;
         //vector of strings to store all the error message generately from reading files
     public:
         Basis();//Default constructor
-        Basis(std::string elename, std::string basisname, std::string path);
+        Basis(std::string elename, std::string basisname, std::string path, cartesian rr);
+        Basis(std::string elename, std::string basisname, std::string path, const double xx, const double yy, const double zz);
         //path = basis set library path
-        void load_cgtos();
+        void load_cgtos(std::string path, cartesian rr);
         void load_sgtos_from_cgtos();
         void load_contr();
+    public:
+        void addsfunction();
+        void addpfunction();
+        void adddfunction();
+        void addffunction();
+        void addgfunction();
+        void addhfunction();
+        void addifunction();
 };

@@ -42,8 +42,10 @@ class Atom
     public:
         Atom();//Default constructor
         Atom(const unsigned int Z, const double xx,const double yy, const double zz, Basis &basis);
+        Atom(const unsigned int Z, const cartesian rr, Basis &basis);
         //constructor that takes the atomic number
         Atom(const string element, const double xx,const double yy, const double zz, Basis &basis);
+        Atom(const string element, const cartesian rr, Basis &basis);
         //constructor that takes the element symbol
         std::string output_info();
         //Public function give output info

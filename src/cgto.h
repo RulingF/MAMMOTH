@@ -31,6 +31,7 @@ That is,.
 */
 
 #include <cmath>
+#include <string>
 #include "cartesian.h"
 #include "physconst.h"
 #include "mathfunc.h"
@@ -39,7 +40,7 @@ namespace GTO
 {
     class CGTO
     {
-        public:
+        private:
             double N; //Normalization constant
             unsigned int l, a, b, c; //Angular momentum l = a + b + c
             double alpha; //alpha controls width of orbital
@@ -48,13 +49,14 @@ namespace GTO
         public:
             CGTO(){N = l = a = b = c = alpha = 0;}//Default constructor
             CGTO(const unsigned int aa, const unsigned int bb, const unsigned int cc, 
-            const double alpha, const cartesian rr);//Constructor takes in cartesian i\
-            nstance
-            CGTO(const unsigned int aa, const unsigned int bb, const unsigned int cc, 
-            const double alpha, const double xx, const double yy, const double zz);
+            const double alpha, const cartesian rr);
+            //Constructor takes in cartesian instance
+            CGTO(const unsigned int aa, const unsigned int bb, const unsigned int cc,
+             const double alpha, const double xx, const double yy, const double zz);
             //Constructor takes in xyz
         private:
             inline double getN() const; //Calculate the normalization constant N
+
     };
     //class 
 }//namespace GTO
