@@ -44,15 +44,15 @@ class Basis
         Basis(std::string elename, std::string basisname, std::string path, cartesian rr);
         Basis(std::string elename, std::string basisname, std::string path, const double xx, const double yy, const double zz);
         //path = basis set library path
-        void load_cgtos(std::string path, cartesian rr);
-        void load_sgtos_from_cgtos();
-        void load_contr();
+        void load_gtos(const std::string path, const cartesian &rr);
     public:
-        void addsfunction();
-        void addpfunction();
-        void adddfunction();
-        void addffunction();
-        void addgfunction();
-        void addhfunction();
-        void addifunction();
+        void addsfunction(std::vector <std::string> &tmplist,const cartesian &rr);
+        void addpfunction(std::vector <std::string> &tmplist,const cartesian &rr);
+        void adddfunction(std::vector <std::string> &tmplist,const cartesian &rr);
+        void addffunction(std::vector <std::string> &tmplist,const cartesian &rr);
+        void addgfunction(std::vector <std::string> &tmplist,const cartesian &rr);
+        void addhfunction(std::vector <std::string> &tmplist,const cartesian &rr);
+        void addifunction(std::vector <std::string> &tmplist,const cartesian &rr);
+        void addcontraction(std::ifstream &basissetfile, std::string am);
+        std::vector<double> addonecontraction(std::vector <std::string> &tmplist);
 };
