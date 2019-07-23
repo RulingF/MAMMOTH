@@ -31,3 +31,13 @@ void Output::write_string(std::string output_string)
 {
     output_file << output_string << std::endl;
 }
+
+void Output::write_title(Input &in)
+{
+    this->write_string(in.title);
+}
+
+void Output::write_mol(Molecule &mol)
+{
+    for(std::string l:mol.output_info) this->write_string(l);
+}

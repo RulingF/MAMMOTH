@@ -34,6 +34,7 @@ Molecule::Molecule(const Input &input)
     std::string element;
     double xx,yy,zz;
     Basis basis;
+    int numberofatoms_cout = 0;
 
     for(std::string line:input.geo)
     {
@@ -47,7 +48,9 @@ Molecule::Molecule(const Input &input)
         basis = Basis(element, this->basisname[element], BASISSET_LIB);
         Atom oneatom = Atom(element,xx,yy,zz,basis);
         this->addAtom(oneatom);
+        numberofatoms_cout += 1;
     }
+    this->natoms = numberofatoms_cout;
     //end load the geometry block
 }
 
@@ -82,4 +85,30 @@ void Molecule::findcm(std::string cmstring)
 void Molecule::findnunpair()
 {
     this->nunpair = this->m - 1;
+}
+
+std::vector<std::string> Molecule::output_info()
+{
+    std::vector<std::string> string_vec;
+    std::string tmp_string;
+    unsigned int nn = this->natoms;
+
+    tmp_string = "The input includes a total of " + std::to_string(nn) + "atoms.";
+    string_vec.push_back(tmp_string);
+    /*Number of atoms output string */
+
+    tmp_string = "The input includes a total of " + std::to_string(nn) + "atoms.";???
+    string_vec.push_back(tmp_string);
+    /*Geometry of the molecule output string */
+
+    tmp_string = "The spin " + std::to_string(nn) + "atoms.";???
+    string_vec.push_back(tmp_string);
+    /*Spin multiplicity output string */
+
+    tmp_string = "The input includes a total of " + std::to_string(nn) + "atoms.";???
+    string_vec.push_back(tmp_string);
+    /*Molecular charge output string */
+
+
+    return string_vec;
 }

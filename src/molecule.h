@@ -45,4 +45,8 @@ class Molecule
         void findcm(std::string cmstring);//cmstring from input.cm
         void findnunpair();
 
+    public:
+        std::vector<std::string> output_info();
+        //Public function give output info
+
 };
