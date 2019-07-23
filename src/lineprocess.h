@@ -23,7 +23,7 @@
 #include <string>
 #include <vector>
 
-std::string erasecharacter(std::string ss,char c)
+inline std::string erasecharacter(std::string ss,char c)
 //erase all character c's from the string ss, return ss
 {
     while(ss.find(c)!= std::string::npos)

@@ -91,9 +91,8 @@ std::vector<std::string> Molecule::output_info()
 {
     std::vector<std::string> string_vec;
     std::string tmp_string;
-    unsigned int nn = this->natoms;
 
-    tmp_string = "The input includes a total of " + std::to_string(nn) + "atoms.";
+    tmp_string = "The input includes a total of " + std::to_string(this->natoms) + "atoms.";
     string_vec.push_back(tmp_string);
     /*Number of atoms output string */
 
@@ -101,11 +100,11 @@ std::vector<std::string> Molecule::output_info()
     string_vec.push_back(tmp_string);
     /*Geometry of the molecule output string */
 
-    tmp_string = "The spin " + std::to_string(nn) + "atoms.";???
+    tmp_string = "Spin Multiplicity: " + std::to_string(this->m) + ". ";
     string_vec.push_back(tmp_string);
     /*Spin multiplicity output string */
 
-    tmp_string = "The input includes a total of " + std::to_string(nn) + "atoms.";???
+    tmp_string = "Molecular Charge: " + std::to_string(this->c) + ". ";
     string_vec.push_back(tmp_string);
     /*Molecular charge output string */
 
