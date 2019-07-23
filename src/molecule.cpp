@@ -113,7 +113,6 @@ std::vector<std::string> Molecule::output_info()
         tmp_string = pair.first + " = " + pair.second;
         string_vec.push_back(tmp_string);
     }
-    
     /*Basis set output string */
 
     tmp_string = "Spin Multiplicity: " + std::to_string(this->m) + ". ";

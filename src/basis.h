@@ -41,7 +41,7 @@ class Basis
     public:
         Basis();//Default constructor
         Basis(std::string elename, std::string basisname, std::string path);
-        //basis set library path
+        //path = basis set library path
         void load_cgtos();
         void load_sgtos_from_cgtos();
         void load_contr();
