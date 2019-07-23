@@ -22,6 +22,16 @@
 
 #include "atom.h"
 
+Atom::Atom()
+{
+    atomic_num_Z = 0;
+    element_symbol = all_element_symbols[0];
+    nelec = 0;
+    atomic_mass = all_atomic_masses[0];
+    r = cartesian(3,0.0,0.0,0.0);
+
+}
+
 Atom::Atom(const unsigned int Z, const double xx,const double yy, const double zz, Basis &basiss)
 {
     atomic_num_Z = Z;
@@ -49,4 +59,13 @@ Atom::Atom(const string element, const double xx,const double yy, const double z
     r = cartesian(3, xx, yy, zz);//3 mean it's 3-dimensional cartesian coordinate
     this->basis = basiss;
     
+}
+
+std::string Atom::output_info()
+/*Needs to be modified so that it can output formated xyz-coordinates */
+{
+    std::string tmp_string;
+    tmp_string = this->element_symbol + "  " + std::to_string(r.getcoordinate(1))
+    + "  " + std::to_string(r.getcoordinate(2))
+    + "  " + std::to_string(r.getcoordinate(3));
 }

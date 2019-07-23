@@ -88,17 +88,33 @@ void Molecule::findnunpair()
 }
 
 std::vector<std::string> Molecule::output_info()
+/*Needs to be modified so that it can output with format*/
 {
     std::vector<std::string> string_vec;
     std::string tmp_string;
+    //Atom single_atom;
 
     tmp_string = "The input includes a total of " + std::to_string(this->natoms) + "atoms.";
     string_vec.push_back(tmp_string);
     /*Number of atoms output string */
 
-    tmp_string = "The input includes a total of " + std::to_string(nn) + "atoms.";???
+    tmp_string = "With the following xyz coordinates: ";
     string_vec.push_back(tmp_string);
+    for(Atom singleatom:atoms)
+    {
+        tmp_string = singleatom.output_info();
+        string_vec.push_back(tmp_string);
+    }
     /*Geometry of the molecule output string */
+
+    tmp_string = "Basis set for each element: ";
+    for(auto pair : this->basisname)
+    {
+        tmp_string = pair.first + " = " + pair.second;
+        string_vec.push_back(tmp_string);
+    }
+    
+    /*Basis set output string */
 
     tmp_string = "Spin Multiplicity: " + std::to_string(this->m) + ". ";
     string_vec.push_back(tmp_string);

@@ -40,11 +40,12 @@ class Atom
         Basis basis;//basis set associated with the element
         
     public:
+        Atom();//Default constructor
         Atom(const unsigned int Z, const double xx,const double yy, const double zz, Basis &basis);
         //constructor that takes the atomic number
         Atom(const string element, const double xx,const double yy, const double zz, Basis &basis);
         //constructor that takes the element symbol
-        std::vector<std::string> output_info();
+        std::string output_info();
         //Public function give output info
 
 };
