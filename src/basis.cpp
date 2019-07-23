@@ -26,7 +26,7 @@ Basis::Basis(std::string elename, std::string basisname, std::string path)
 {
     this->basisset_name = basisname;
     this->element_name = elename;
-    std::ifstream basissetfile(path);
+    std::ifstream basissetfile(path+"basisname"+".basis");
     std::string line;
 
     if(basissetfile.is_open())
