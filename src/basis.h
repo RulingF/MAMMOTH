@@ -54,5 +54,6 @@ class Basis
         void addhfunction(std::vector <std::string> &tmplist,const cartesian &rr);
         void addifunction(std::vector <std::string> &tmplist,const cartesian &rr);
         void addcontraction(std::ifstream &basissetfile, std::string am);
-        std::vector<double> addonecontraction(std::vector <std::string> &tmplist);
+        std::vector<double> addonecontraction(std::vector <std::string> &tmplist,
+        const unsigned int c1, const unsigned int c2, const unsigned int n);
 };

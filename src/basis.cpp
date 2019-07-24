@@ -163,14 +163,30 @@ void Basis::addifunction(std::vector <std::string> &tmplist, const cartesian &rr
 
 void Basis::addcontraction(std::ifstream &basissetfile, std::string am)
 {
-
-}
-
-std::vector<double> Basis::addonecontraction(std::vector <std::string> &tmplist)
-{
-    unsigned int n = this->cgtos_map["s"].size();
+    unsigned int n = this->cgtos_map[am].size();
     /* number of primitives (not number of functions,
     since functions will include m_j functions*/
+    unsigned int c1 = 0, c2 = 0;
+    std::string line;
+    std::vector<std::string> tmplist;
+    getline(basissetfile,line);
+    tmplist = split_line(line,",");
+
+    while(tmplist[0] == "c")
+    {
+        //tmplist[1]
+        contr_map[am].push_back(addonecontraction(tmplist, c1, c2, n));
+        getline(basissetfile,line);
+        tmplist = split_line(line,",");
+    }
+
+    basissetfile.seekg(basissetfile.cur-1);
+}
+
+std::vector<double> Basis::addonecontraction(std::vector <std::string> &tmplist, 
+const unsigned int c1, const unsigned int c2, const unsigned int n)
+{
+    //add function that put one contraction into vector<double>
     
 
 }
