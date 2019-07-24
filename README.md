@@ -4,7 +4,7 @@ The current stage supports only the Molpro regular basis set files.
 The library path is "./basislib/".
 The very fixed format of the input file, recommended extension for input file: *.com
 
-------------------------------------------------------------------
+
 [Title]
 Basis, start
 [Basis set name for each element, one line] (Example: H=STO-3G, O=STO-3G)
@@ -14,7 +14,7 @@ Geometry, start
 [cartesian xyz](Example: Al, 0.000, 0.001, 0.002)
 Geometry, end
 Hamiltonian = Regular
-------------------------------------------------------------------
+
 
 No extra empty lines.
 (This'll perhaps be modified in the later stage.)
