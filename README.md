@@ -5,7 +5,7 @@ The library path is "./basislib/".
 The very fixed format of the input file, recommended extension for input file: *.com  
 
 
-[Title]
+[Title]  
 Basis, start  
 [Basis set name for each element, one line] (Example: H=STO-3G, O=STO-3G)  
 Basis, end  
