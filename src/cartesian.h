@@ -20,6 +20,9 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
+#ifndef _CARTESIAN_H
+#define _CARTESIAN_H
+
 #include <vector>
 #include <cstdarg>
 
@@ -37,3 +40,5 @@ class cartesian
         std::vector<double> getV();//Returns the n-dimensional vector V
         double getcoordinate(const unsigned int nth) const;//Returns nth coordinate value, 1 = x, 2 = y, ...
 };
+
+#endif //_CARTESIAN_H

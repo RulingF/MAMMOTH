@@ -20,6 +20,9 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
+#ifndef _LINEPROCESS_H
+#define _LINEPROCESS_H
+
 #include <string>
 #include <vector>
 
@@ -56,3 +59,5 @@ std::vector <std::string> split_line(std::string ll, std::string dd)
     return returnvector;
     //std::cout << s << std::endl;
 }
+
+#endif //_LINEPROCESS_H

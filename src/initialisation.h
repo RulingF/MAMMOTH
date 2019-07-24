@@ -20,7 +20,11 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
+#ifndef _INITIALISATION_H
+#define _INITIALISATION_H
+
 #include <string>
 
 static const std::string BASISSET_LIB = "./basislib/";
 
+#endif //_INITIALISATION_H

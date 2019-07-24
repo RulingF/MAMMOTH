@@ -20,6 +20,9 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
+#ifndef _ATOM_H
+#define _ATOM_H
+
 #include <string>
 #include <string.h>
 #include <vector>
@@ -51,4 +54,6 @@ class Atom
         //Public function give output info
 
 };
+
+#endif //_ATOM_H
 

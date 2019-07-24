@@ -30,6 +30,9 @@ That is,.
     -- alpha controls width of orbital
 */
 
+#ifndef _CGTO_H
+#define _CGTO_H
+
 #include <cmath>
 #include <string>
 #include "cartesian.h"
@@ -61,3 +64,4 @@ namespace GTO
     //class 
 }//namespace GTO
 
+#endif //_CGTO_H

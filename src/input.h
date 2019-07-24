@@ -31,6 +31,9 @@ Geometry, end
 Hamiltonian = Regular
  */
 
+#ifndef _INPUT_H
+#define _INPUT_H
+
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -63,3 +66,5 @@ class Input
         //void close();//close the file
         //void reset();//resets the pointer to the start of the file
 };
+
+#endif //_INPUT_H

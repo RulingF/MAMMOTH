@@ -30,8 +30,10 @@ DOI: 10.1002/qua.560540202
 
 */
 
-#include "cgto.h"
+#ifndef _SGTO_H
+#define _SGTO_H
 
+#include "cgto.h"
 
 namespace GTO
 {
@@ -49,3 +51,5 @@ namespace GTO
 
     };
 }//namespace GTO
+
+#endif //_SGTO_H

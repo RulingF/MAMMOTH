@@ -20,6 +20,9 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
+#ifndef _CLOCK_H
+#define _CLOCK_H
+
 #include <sys/time.h>
 #include <time.h>
 #include <cstddef>
@@ -38,3 +41,5 @@ class Clock
         double get_passed_time(); //Return time in seconds
         char * get_current_time(); //Return the current real time
 };
+
+#endif //_CLOCK_H

@@ -20,6 +20,9 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
+#ifndef _MATHFUNC_H
+#define _MATHFUNC_H
+
 //#include <cmath>
 
 inline unsigned int permut(const unsigned int n)
@@ -37,3 +40,5 @@ inline unsigned int combin(const unsigned int n, const unsigned int m)
     //cout << arrang(n,m) <<"\n" <<permut(m) << endl;
     return arrang(n,m)/permut(m);
 }
+
+#endif //_MATHFUNC_H

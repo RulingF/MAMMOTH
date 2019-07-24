@@ -20,6 +20,9 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
+#ifndef _OUTPUT_H
+#define _OUTPUT_H
+
 #include <iostream>
 #include <fstream>
 #include "molecule.h"
@@ -36,3 +39,5 @@ class Output
         void write_mol(Molecule &mol);//write molecule information in file
         inline void write_string(std::string output_string);//Write input_string in file
 };
+
+#endif //_OUTPUT_H

@@ -20,8 +20,13 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
+#ifndef _PHYSCONST_H
+#define _PHYSCONST_H
+
 #define phys_pi 3.14159265358979323846264338327950288   //pi
 #define phys_2pi 6.283185307179586476925286767          //2*pi
 #define phys_h 6.626070040E-34                          //Unit: Joule [J]. Planck_constant
 #define phys_c 299792458                                //Unit: meters per second [ms$^{-1}$] speed of light
 #define phys_bohrtoangstrom 0.529177249                 //Conversion between bohr and angstroms 
+
+#endif //_PHYSCONST_H

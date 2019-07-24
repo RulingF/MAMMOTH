@@ -20,6 +20,9 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
+#ifndef _MOLECULE_H
+#define _MOLECULE_H
+
 #include <unordered_map>
 #include "atom.h"
 #include "input.h"
@@ -50,3 +53,5 @@ class Molecule
         //Public function give output info
 
 };
+
+#endif //_MOLECULE_H

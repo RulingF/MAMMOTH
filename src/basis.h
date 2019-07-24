@@ -20,6 +20,9 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
+#ifndef _BASIS_H
+#define _BASIS_H
+
 #include <vector>
 #include <string>
 #include <fstream>
@@ -56,3 +59,5 @@ class Basis
         void addcontraction(std::ifstream &basissetfile, std::string am);
         std::vector<double> addonecontraction(std::vector <std::string> &tmplist, const unsigned int n);
 };
+
+#endif //_BASIS_H
