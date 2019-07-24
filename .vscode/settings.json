@@ -56,6 +56,7 @@
         "__hash_table": "cpp",
         "__node_handle": "cpp",
         "optional": "cpp",
-        "unordered_map": "cpp"
+        "unordered_map": "cpp",
+        "__functional_03": "cpp"
     }
 }

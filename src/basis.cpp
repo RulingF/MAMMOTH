@@ -166,7 +166,6 @@ void Basis::addcontraction(std::ifstream &basissetfile, std::string am)
     unsigned int n = this->cgtos_map[am].size();
     /* number of primitives (not number of functions,
     since functions will include m_j functions*/
-    unsigned int c1 = 0, c2 = 0;
     std::string line;
     std::vector<std::string> tmplist;
     getline(basissetfile,line);
@@ -175,7 +174,7 @@ void Basis::addcontraction(std::ifstream &basissetfile, std::string am)
     while(tmplist[0] == "c")
     {
         //tmplist[1]
-        contr_map[am].push_back(addonecontraction(tmplist, c1, c2, n));
+        contr_map[am].push_back(addonecontraction(tmplist, n));
         getline(basissetfile,line);
         tmplist = split_line(line,",");
     }
@@ -183,10 +182,22 @@ void Basis::addcontraction(std::ifstream &basissetfile, std::string am)
     basissetfile.seekg(basissetfile.cur-1);
 }
 
-std::vector<double> Basis::addonecontraction(std::vector <std::string> &tmplist, 
-const unsigned int c1, const unsigned int c2, const unsigned int n)
+std::vector<double> Basis::addonecontraction(std::vector <std::string> &tmplist, const unsigned int n)
+//function that put one contraction into vector<double>
 {
-    //add function that put one contraction into vector<double>
-    
-
+    std::vector<double> re;
+    unsigned int c1, c2;
+    std::vector<std::string> c_pair;
+    c_pair = split_line(tmplist[1],".");
+    c1 = atoi(c_pair[0].c_str());
+    c2 = atoi(c_pair[1].c_str());
+    for(int i=1; i < c1; ++i)
+    {
+        re.push_back(0.0);
+    }
+    for(int i=c1; i <= c2; ++i)
+    {
+        re.push_back(atof(tmplist[i+1].c_str()));
+    }
+    return re;
 }
