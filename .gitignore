@@ -33,7 +33,7 @@
 
 # Directories
 ./build/
-./src/CMakeFiles/
+CMakeFiles/
 
 # Build files
 *.list
