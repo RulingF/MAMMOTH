@@ -33,3 +33,10 @@
 
 # Directories
 ./build/
+./src/CMakeFiles/
+
+# Build files
+*.list
+*.txt
+*.cmake
+Makefile
