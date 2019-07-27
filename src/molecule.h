@@ -47,6 +47,21 @@ class Molecule
         void findbasis(std::string basisstring);//basisstring from input.basis
         void findcm(std::string cmstring);//cmstring from input.cm
         void findnunpair();
+    public:
+    /*compute the one-electron and two-electron integrals and store them in disk space
+    the ingerals are then loaded by hf module to obtain the matrices as follows:
+    Smatrix   //the overlap matrix
+    Hmatrix   //the core Hanmiltonian matrix
+    Fomatrix  //the initial Fock maxtrix
+    Fmatrix   //the Fock matrix
+    Comatrix  //the initial Density maxtrix
+    Cmatrix   //the Density maxtrix
+    ...
+
+    
+     */
+        void compute_nuclear_repulsive(); //nuclear repulsive energy NN terms
+        void compute_integral(); //compute the integrals associated with this molecule
 
     public:
         std::vector<std::string> output_info();

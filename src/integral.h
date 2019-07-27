@@ -20,6 +20,16 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 //  DEALINGS IN THE SOFTWARE.
 
+/*Computes the integrals and store them using disk space,
+One-electron integrals:
+The electronic kinetic energy
+
+the attractive nuclear electronic energy
+
+Two-electron integrals:
+The two-electron repulsive energy
+
+ */
 #include "molecule.h"
 
 class integral
@@ -28,12 +38,14 @@ class integral
         integral();//Default constructor
         
     public:
+    /*one-electron */
         void compute_kinetic();
-        void compute_repulsive();
+        void compute_attractive();
         void compute_core_hamiltonian();
 
     public:
-        void compute_2_electron();
+    /*two-electron */
+        void compute_repulsive();
         
 
 };
