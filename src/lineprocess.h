@@ -36,7 +36,7 @@ inline std::string erasecharacter(std::string ss,char c)
     return ss;
 }
 
-std::vector <std::string> split_line(std::string ll, std::string dd)
+inline std::vector <std::string> split_line(std::string ll, std::string dd)
 //split a string ll using delimiter dd and return a string vector
 {
     std::string s = ll;

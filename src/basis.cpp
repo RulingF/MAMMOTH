@@ -22,6 +22,11 @@
 
 #include "basis.h"
 
+Basis::Basis()
+{
+    /*Default constructor */
+}
+
 Basis::Basis(std::string elename, std::string basisname, std::string path, const double xx, const double yy, const double zz)
 {
     this->basisset_name = basisname;

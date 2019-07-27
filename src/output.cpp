@@ -39,5 +39,5 @@ void Output::write_title(Input &in)
 
 void Output::write_mol(Molecule &mol)
 {
-    for(std::string l:mol.output_info) this->write_string(l);
+    for(std::string l:mol.output_info()) this->write_string(l);
 }
