@@ -33,22 +33,27 @@ int main(int argc, char *argv[])
     if(argc ==1)
     {
         cout << "Usage: " << argv[0] << " <.input>" << endl;
-        cout << "Wrong input file" << endl;
+        //cout << "Wrong input file" << endl;
         return 0;
     }
 
-    //Read the input geometry
+    //Read the input
     string filename;
     filename = argv[argc-1];
+    Input in1(filename);
 
     //Create output
-    Output out();
-    
+    Output out1(split_line(filename,".")[0]+".out");
+    out1.write_string("This is an output test.");
+
     //Timing
     Clock time;
-    string test;
-    getline(std::cin,test);
+    std::string timenow = time.get_current_time();
+    out1.write_string(timenow);
 
-    Input in1("file_name");
-    Input in2=Input("file_name");
+    
+    
+    
+
+    return 0;
 }
