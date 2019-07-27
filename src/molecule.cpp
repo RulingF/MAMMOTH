@@ -126,3 +126,11 @@ std::vector<std::string> Molecule::output_info()
 
     return string_vec;
 }
+
+void Molecule::compute_nuclear_repulsive()
+{
+    for(Atom a : atoms)
+    {
+        
+    }
+}
