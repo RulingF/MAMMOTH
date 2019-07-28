@@ -127,10 +127,17 @@ std::vector<std::string> Molecule::output_info()
     return string_vec;
 }
 
-void Molecule::compute_nuclear_repulsive()
+double Molecule::compute_nuclear_repulsive()
+/*Enn = \sum_{A<B}^N Z_AZ_B/\abs(R_A-R_B) */
 {
-    for(Atom a : atoms)
-    {
-        
-    }
+    double erepul = 0; //repulsive energy
+    for(unsigned int i = 0; i<natoms; ++i )
+        for(unsigned int j = i+1; j<natoms; ++j)
+            {
+                erepul += atoms[i].get_nuclear_charge() * atoms[j].get_nuclear_charge()
+                / sqrt(pow((atoms[i].get_cartesian().getcoordinate(1)-atoms[i].get_cartesian().getcoordinate(1)),2)
+                *pow((atoms[i].get_cartesian().getcoordinate(2)-atoms[i].get_cartesian().getcoordinate(2)),2)
+                *pow((atoms[i].get_cartesian().getcoordinate(3)-atoms[i].get_cartesian().getcoordinate(3)),2));
+            }
+    return erepul;
 }

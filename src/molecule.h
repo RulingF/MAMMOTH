@@ -60,7 +60,7 @@ class Molecule
 
     
      */
-        void compute_nuclear_repulsive(); //nuclear repulsive energy NN terms
+        double compute_nuclear_repulsive(); //nuclear repulsive energy NN terms
         void compute_integral(); //compute the integrals associated with this molecule
 
     public:

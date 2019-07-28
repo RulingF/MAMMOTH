@@ -96,3 +96,13 @@ std::string Atom::output_info()
     + "  " + std::to_string(r.getcoordinate(2))
     + "  " + std::to_string(r.getcoordinate(3));
 }
+
+unsigned int Atom::get_nuclear_charge()
+{
+    return this->atomic_num_Z;
+}
+
+cartesian Atom::get_cartesian()
+{
+    return this->r;
+}

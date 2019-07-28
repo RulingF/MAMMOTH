@@ -39,7 +39,7 @@ class Atom
         string element_symbol;//symbol of the element
         unsigned int nelec;//number of electrons
         cartesian r;//cartesian coordinate of atom
-        double atomic_mass;//atomic mass, not that the default is the most abundant isotope
+        double atomic_mass;//atomic mass, note that the default is the most abundant isotope
         Basis basis;//basis set associated with the element
         
     public:
@@ -52,6 +52,10 @@ class Atom
         //constructor that takes the element symbol
         std::string output_info();
         //Public function give output info
+    
+    public:
+        unsigned int get_nuclear_charge();
+        cartesian get_cartesian();
 
 };
 
