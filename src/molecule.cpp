@@ -130,6 +130,8 @@ std::vector<std::string> Molecule::output_info()
 double Molecule::compute_nuclear_repulsive()
 /*Enn = \sum_{A<B}^N Z_AZ_B/\abs(R_A-R_B) */
 {
+    if (natoms = 1) return 0.0;//erepul = 0 if an atom
+
     double erepul = 0; //repulsive energy
     for(unsigned int i = 0; i<natoms; ++i )
         for(unsigned int j = i+1; j<natoms; ++j)
