@@ -37,6 +37,11 @@ int main(int argc, char *argv[])
         return 0;
     }
 
+    //Set clock
+    Clock time;
+    std::string timenow = time.get_current_time();
+    time.start_clock();
+
     //Read the input
     string filename;
     filename = argv[argc-1];
@@ -46,12 +51,13 @@ int main(int argc, char *argv[])
     Output out1(split_line(filename,".")[0]+".out");
     out1.write_string("This is an output test.");
 
-    //Timing
-    Clock time;
-    std::string timenow = time.get_current_time();
+    //Test
+    time.pause_clock();
+    double t1 = time.get_passed_time();
     out1.write_string(timenow);
+    out1.write_string("Time has passed by:");
+    out1.write_string(t1);
 
-    
     
     
 

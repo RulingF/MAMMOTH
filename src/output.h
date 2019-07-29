@@ -37,7 +37,8 @@ class Output
         Output(std::string file_name); //constructor
         void write_title(Input &in);//write title in file
         void write_mol(Molecule &mol);//write molecule information in file
-        inline void write_string(std::string output_string);//Write input_string in file
+        inline void write_string(const std::string output_string);//Write input_string in file
+        inline void write_string(const double output_number);//overload to output numbers
 };
 
 #endif //_OUTPUT_H
