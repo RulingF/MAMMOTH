@@ -55,6 +55,8 @@ int main(int argc, char *argv[])
     time.pause_clock();
     double t1 = time.get_passed_time();
     out1.write_string(timenow);
+    out1.write_title(in1);
+    //out1.write_mol();
     out1.write_string("Time has passed by:");
     out1.write_string(t1);
 
