@@ -89,12 +89,16 @@ Atom::Atom(const string element, const cartesian rr, Basis &basiss)
 }
 
 std::string Atom::output_info()
-/*Needs to be modified so that it can output formated xyz-coordinates */
+/*Needs to be modified so that it can output other information
+and formated xyz-coordinates
+ */
 {
     std::string tmp_string;
     tmp_string = this->element_symbol + "  " + std::to_string(r.getcoordinate(1))
     + "  " + std::to_string(r.getcoordinate(2))
     + "  " + std::to_string(r.getcoordinate(3));
+
+    return tmp_string;
 }
 
 unsigned int Atom::get_nuclear_charge()
