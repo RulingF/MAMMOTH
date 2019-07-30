@@ -60,7 +60,7 @@ class Integral
 
     public:
     /*two-electron */
-        void compute_repulsive();
+        void compute_coulomb_repulsive();
         
 
 };

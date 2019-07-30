@@ -36,7 +36,7 @@ Integral::Integral(Basis &basis)
 
 void Integral::compute_overlap()
 {
-
+    phys_pi;
 }
 
 void Integral::compute_kinetic()
@@ -44,7 +44,7 @@ void Integral::compute_kinetic()
 
 }
 
-void Integral::compute_repulsive()
+void Integral::compute_coulomb_repulsive()
 {
     
 }
