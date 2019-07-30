@@ -21,3 +21,20 @@
 //  DEALINGS IN THE SOFTWARE.
 
 /* code */
+
+#include "integral.h"
+
+Integral::Integral()
+{
+
+}
+
+Integral::Integral(Basis &basis)
+{
+
+}
+
+void Integral::compute_overlap()
+{
+    
+}

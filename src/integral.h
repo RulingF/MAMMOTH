@@ -30,15 +30,30 @@ Two-electron integrals:
 The two-electron repulsive energy
 
  */
+
+#ifndef _INTEGRAL_H
+#define _INTEGRAL_H
+
 #include "molecule.h"
 
-class integral
+class Integral
 {
+    private:
+    /*1-electron integral in lists, follow Mulliken notation over AO basis functions*/
+        std::vector<double> overlap; //list of AO-basis overlap
+        std::vector<double> kinetic; //list of kinetic energy integrals
+        std::vector<double> nuclattrac; //list of nuclear attraction integrals
+    private:
+    /*2-electron integral in list, follow Mulliken notation over AO basis functions*/
+        std::vector<double> electrrep; //list of 2-electron repulsive integrals
+
     public:
-        integral();//Default constructor
+        Integral();//Default constructor
+        Integral(Basis &basis); //
         
     public:
     /*one-electron */
+        void compute_overlap();
         void compute_kinetic();
         void compute_attractive();
         void compute_core_hamiltonian();
@@ -49,3 +64,5 @@ class integral
         
 
 };
+
+#endif //_INTEGRAL_H
