@@ -36,7 +36,7 @@ Integral::Integral(Basis &basis)
 
 void Integral::compute_overlap()
 {
-    phys_pi;
+    //phys_pi;
 }
 
 void Integral::compute_kinetic()
