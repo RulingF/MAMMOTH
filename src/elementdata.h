@@ -21,7 +21,7 @@
 //  DEALINGS IN THE SOFTWARE.
 
 /* This file is modifed and created partially from  
-/*
+
 ** The new PSI standard header file for atomic masses.
 **
 ** Created by Matt Leininger, July 1995

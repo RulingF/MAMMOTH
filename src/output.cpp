@@ -27,9 +27,14 @@ Output::Output(std::string file_name)
     output_file.open(file_name);
 }
 
-void Output::write_string(std::string output_string)
+void Output::write_string(const std::string output_string)
 {
     output_file << output_string << std::endl;
+}
+
+void Output::write_string(const double output_number)
+{
+    output_file << std::to_string(output_number) << std::endl;
 }
 
 void Output::write_title(Input &in)
