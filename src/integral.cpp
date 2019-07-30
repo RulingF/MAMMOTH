@@ -36,5 +36,15 @@ Integral::Integral(Basis &basis)
 
 void Integral::compute_overlap()
 {
+
+}
+
+void Integral::compute_kinetic()
+{
+
+}
+
+void Integral::compute_repulsive()
+{
     
 }
