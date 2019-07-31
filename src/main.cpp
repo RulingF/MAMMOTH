@@ -47,6 +47,9 @@ int main(int argc, char *argv[])
     filename = argv[argc-1];
     Input in1(filename);
 
+    //Build the molecule from the input file
+    Molecule mol(in1);
+
     //Create output
     Output out1(split_line(filename,".")[0]+".out");
     out1.write_string("This is an output test.");
@@ -56,7 +59,7 @@ int main(int argc, char *argv[])
     double t1 = time.get_passed_time();
     out1.write_string(timenow);
     out1.write_title(in1);
-    //out1.write_mol();
+    out1.write_mol(mol);
     out1.write_string("Time has passed by:");
     out1.write_string(t1);
 
