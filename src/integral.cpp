@@ -26,12 +26,14 @@
 
 Integral::Integral()
 {
-
+    //Add default contructor
 }
 
 Integral::Integral(Basis &basis)
 {
-
+    compute_overlap();
+    compute_kinetic();
+    compute_coulomb_repulsive();
 }
 
 void Integral::compute_overlap()

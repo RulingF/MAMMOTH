@@ -26,5 +26,6 @@
 #include <string>
 
 static const std::string BASISSET_LIB = "./basislib/";
+static const std::string SCRATCH_PATH = "/scratch/mammoth/";
 
 #endif //_INITIALISATION_H

@@ -1,0 +1,4 @@
+cd src/
+cmake .
+
+make
