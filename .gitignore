@@ -30,7 +30,7 @@
 *.exe
 *.out
 *.app
-*.com
+##*.com
 *.out
 ./mammoth
 
