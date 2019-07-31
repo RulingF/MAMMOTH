@@ -39,6 +39,8 @@ The two-electron repulsive energy
 class Integral
 {
     private:
+        unsigned int norbs; //number of orbitals
+    private:
     /*1-electron integral in lists, follow Mulliken notation over AO basis functions*/
         std::vector<double> overlap; //list of AO-basis overlap
         std::vector<double> kinetic; //list of kinetic energy integrals
@@ -49,7 +51,7 @@ class Integral
 
     public:
         Integral();//Default constructor
-        Integral(Basis &basis); //
+        Integral(Molecule &mol); //
         
     public:
     /*one-electron */

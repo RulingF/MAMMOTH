@@ -26,10 +26,11 @@
 
 Integral::Integral()
 {
+    this->norbs = 0;
     //Add default contructor
 }
 
-Integral::Integral(Basis &basis)
+Integral::Integral(Molecule &mol)
 {
     compute_overlap();
     compute_kinetic();
