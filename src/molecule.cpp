@@ -123,8 +123,12 @@ std::vector<std::string> Molecule::output_info()
     string_vec.push_back(tmp_string);
     /*Molecular charge output string */
 
-
     return string_vec;
+}
+
+const Atom &Molecule::operator[](const unsigned i) const
+{
+    return atoms[i];
 }
 
 double Molecule::compute_nuclear_repulsive()

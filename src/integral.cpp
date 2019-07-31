@@ -24,13 +24,13 @@
 
 #include "integral.h"
 
-Integral::Integral()
+Integral::Integral(Molecule &mol)
 {
-    this->norbs = 0;
-    //Add default contructor
+    unsigned int norbscnt = 0; //count for orbitals
+    
 }
 
-Integral::Integral(Molecule &mol)
+void Integral::compute_integrals()
 {
     compute_overlap();
     compute_kinetic();

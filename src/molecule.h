@@ -66,6 +66,7 @@ class Molecule
     public:
         std::vector<std::string> output_info();
         //Public function give output info
+        const Atom &operator[](const unsigned int i) const;
 
 };
 

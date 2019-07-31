@@ -50,8 +50,9 @@ class Integral
         std::vector<double> electrrep; //list of 2-electron repulsive integrals
 
     public:
-        Integral();//Default constructor
+        Integral():norbs(1){};//Default constructor
         Integral(Molecule &mol); //
+        void compute_integrals(); //
         
     public:
     /*one-electron */
