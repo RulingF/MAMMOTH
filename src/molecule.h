@@ -41,12 +41,16 @@ class Molecule
         int c;//charge c
         unsigned int m;//spin multiplicity m = nunpair + 1
         unsigned int han;//Hamiltonian option, mainly controls the integral code
-    public:
-        Molecule(const Input &input);//Constructor
-        void addAtom(const Atom& at);//add atoms into std::vector<Atom> atoms
+    private:
         void findbasis(std::string basisstring);//basisstring from input.basis
         void findcm(std::string cmstring);//cmstring from input.cm
         void findnunpair();
+    public:
+        Molecule(const Input &input);//Constructor
+        void addAtom(const Atom& at);//add atoms into std::vector<Atom> atoms
+        unsigned int getnatoms(){return natoms;};
+        unsigned int getnunpair(){return nunpair;};
+        
     public:
     /*compute the one-electron and two-electron integrals and store them in disk space
     the ingerals are then loaded by hf module to obtain the matrices as follows:

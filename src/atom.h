@@ -41,6 +41,7 @@ class Atom
         cartesian r;//cartesian coordinate of atom
         double atomic_mass;//atomic mass, note that the default is the most abundant isotope
         Basis basis;//basis set associated with the element
+        unsigned int norbs;//number of orbitals at this atom = number of basis functions
         
     public:
         Atom();//Default constructor
@@ -52,10 +53,13 @@ class Atom
         //constructor that takes the element symbol
         std::string output_info();
         //Public function give output info
-    
+    private:
+        void countnorbs();//count number of basis functions
+
     public:
         unsigned int get_nuclear_charge();
         cartesian get_cartesian();
+        const unsigned int getnorbs() const {return norbs;};
 
 };
 

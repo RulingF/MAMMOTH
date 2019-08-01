@@ -27,7 +27,12 @@
 Integral::Integral(Molecule &mol)
 {
     unsigned int norbscnt = 0; //count for orbitals
-    
+    for(unsigned int i=0; i<mol.getnatoms(); ++i)//loop over atoms
+    {
+        norbscnt += mol[i].getnorbs();
+    }
+    this->norbs = norbscnt;
+
 }
 
 void Integral::compute_integrals()

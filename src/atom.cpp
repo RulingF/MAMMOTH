@@ -27,6 +27,7 @@ Atom::Atom()
     atomic_num_Z = 0;
     element_symbol = all_element_symbols[0];
     nelec = 0;
+    norbs = 0;
     atomic_mass = all_atomic_masses[0];
     r = cartesian(3,0.0,0.0,0.0);
 
@@ -41,7 +42,7 @@ Atom::Atom(const unsigned int Z, const double xx,const double yy, const double z
 
     r = cartesian(3, xx, yy, zz);//3 mean it's 3-dimensional cartesian coordinate
     this->basis = basiss;
-
+    this->countnorbs();
 }
 
 Atom::Atom(const unsigned int Z, const cartesian rr, Basis &basiss)
@@ -53,6 +54,7 @@ Atom::Atom(const unsigned int Z, const cartesian rr, Basis &basiss)
 
     r = rr;//Copy costructor
     this->basis = basiss;
+    this->countnorbs();
 
 }
 
@@ -70,6 +72,7 @@ Atom::Atom(const string element, const double xx,const double yy, const double z
 
     r = cartesian(3, xx, yy, zz);//3 mean it's 3-dimensional cartesian coordinate
     this->basis = basiss;
+    this->countnorbs();
 }
 
 Atom::Atom(const string element, const cartesian rr, Basis &basiss)
@@ -86,7 +89,28 @@ Atom::Atom(const string element, const cartesian rr, Basis &basiss)
 
     r = rr;//Copy costructor
     this->basis = basiss;
+    this->countnorbs();
 }
+
+void Atom::countnorbs()
+{
+    unsigned int norbscount = 0;
+    if(basis.cgtos_map.find("s") != basis.cgtos_map.end())
+        norbscount += 1;
+    if(basis.cgtos_map.find("p") != basis.cgtos_map.end())
+        norbscount += 3;
+    if(basis.cgtos_map.find("d") != basis.cgtos_map.end())
+    /*Stop at d, and 6 is for cartesian basis, 5 for spherical basis
+    this needs to be modified
+     */
+        norbscount += 6;
+    if(basis.cgtos_map.find("f") != basis.cgtos_map.end())
+        //norbscount += 1;
+    if(basis.cgtos_map.find("g") != basis.cgtos_map.end())
+        //norbscount += 1;
+    this->norbs = norbscount;
+}
+
 
 std::string Atom::output_info()
 /*Needs to be modified so that it can output other information

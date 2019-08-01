@@ -34,7 +34,7 @@
 
 class Basis
 {
-    private:
+    public:
         std::string element_name, basisset_name;//name of the element and name of the basis
         std::unordered_map<std::string,std::vector<GTO::CGTO>> cgtos_map;//Cartesian Gaussian type orbitals, primitives
         std::unordered_map<std::string,std::vector<GTO::SGTO>> sgtos_map;//Spherical Gaussian type orbitals, primitives
