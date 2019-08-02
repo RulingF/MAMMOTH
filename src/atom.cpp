@@ -96,14 +96,14 @@ void Atom::countnorbs()
 {
     unsigned int norbscount = 0;
     if(basis.cgtos_map.find("s") != basis.cgtos_map.end())
-        norbscount += 1;
+        norbscount += 1 * sizeof(basis.contr_map["s"]);
     if(basis.cgtos_map.find("p") != basis.cgtos_map.end())
-        norbscount += 3;
+        norbscount += 3 * sizeof(basis.contr_map["p"]);
     if(basis.cgtos_map.find("d") != basis.cgtos_map.end())
     /*Stop at d, and 6 is for cartesian basis, 5 for spherical basis
     this needs to be modified
      */
-        norbscount += 6;
+        norbscount += 6 * sizeof(basis.contr_map["d"]);
     if(basis.cgtos_map.find("f") != basis.cgtos_map.end())
         //norbscount += 1;
     if(basis.cgtos_map.find("g") != basis.cgtos_map.end())

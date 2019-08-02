@@ -31,7 +31,7 @@ Integral::Integral(Molecule &mol)
     {
         norbscnt += mol[i].getnorbs();
     }
-    this->norbs = norbscnt;//this is only minimal basis, needs to be changed
+    this->norbs = norbscnt;//test for this
 
 }
 
