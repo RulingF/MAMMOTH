@@ -36,6 +36,12 @@ cartesian::cartesian()
     //for(double n : V){std::cout << n << std::endl;}
 }
 
+cartesian::cartesian(const std::vector<double> VV)
+{
+    this->n = V.size();
+    this->V = VV;
+}
+
 cartesian::cartesian(const unsigned int nn, ...)
 {
     this->n = nn;

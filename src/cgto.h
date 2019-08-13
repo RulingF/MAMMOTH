@@ -57,6 +57,12 @@ namespace GTO
             CGTO(const unsigned int aa, const unsigned int bb, const unsigned int cc,
              const double alpha, const double xx, const double yy, const double zz);
             //Constructor takes in xyz
+
+        public:
+        /*access functions */
+            const double get_alpha() const;
+            const cartesian get_cartesian() const;
+
         private:
             inline double getN() const; //Calculate the normalization constant N
 

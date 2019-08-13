@@ -52,7 +52,7 @@ void Integral::compute_overlap()
 
 double Integral::compute_overlap_1d()
 {
-    
+
 }
 
 void Integral::compute_kinetic()
@@ -63,4 +63,22 @@ void Integral::compute_kinetic()
 void Integral::compute_coulomb_repulsive()
 {
     
+}
+
+cartesian Integral::gaussian_product_center(const GTO::CGTO &f1, const GTO::CGTO &f2)
+{
+    double alpha1 = f1.get_alpha();
+    cartesian r1 = f1.get_cartesian();
+    double alpha2 = f2.get_alpha();
+    cartesian r2 = f2.get_cartesian();
+
+    double gamma =  alpha1 + alpha2;
+    std::vector<double> V;
+
+    for(unsigned int i = 1; i <= r1.getV().size() ; ++i)
+    {
+        V.push_back((alpha1 * r1.getcoordinate(i)+alpha2 * r2.getcoordinate(i)) / gamma);
+    }
+
+    return cartesian(V);
 }

@@ -62,4 +62,14 @@ namespace GTO
         //using less pow function calls is quicker, using pow(n,3.0/2.0) much better \
         than sqrt(pow(n,3.0))
     }
+
+    const double CGTO::get_alpha() const
+    {
+        return this->alpha;
+    }
+
+    const cartesian CGTO::get_cartesian() const
+    {
+        return this->r;
+    }
 } // namespace GTO

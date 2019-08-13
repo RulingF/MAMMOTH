@@ -34,8 +34,11 @@ class cartesian
     public:
         //cartesian(const double x = 0, const double y = 0,const double z = 0);//Seriously illed when n = 2, can overload correctly
         cartesian();//Default constructor
+        cartesian(const std::vector<double> VV);//Constructor from n vector
         cartesian(const unsigned int nn, ...);//Constructor n dimensions
         cartesian(const cartesian &instance_same);//Constructor copy same coorinates
+    
+    public:
         unsigned int getdimension();//Returns the dimension n
         std::vector<double> getV();//Returns the n-dimensional vector V
         double getcoordinate(const unsigned int nth) const;//Returns nth coordinate value, 1 = x, 2 = y, ...

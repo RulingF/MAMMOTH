@@ -35,6 +35,7 @@ The two-electron repulsive energy
 #define _INTEGRAL_H
 
 #include "molecule.h"
+#include "cgto.h"
 
 class Integral
 {
@@ -64,7 +65,8 @@ class Integral
     private:
     /*Auxiliary functions */
         double compute_overlap_1d();
-        
+        cartesian gaussian_product_center(const GTO::CGTO &f1, const GTO::CGTO &f2);
+
     public:
     /*two-electron */
         void compute_coulomb_repulsive();
