@@ -64,7 +64,7 @@ class Integral
 
     private:
     /*Auxiliary functions */
-        double compute_overlap_1d();
+        double compute_overlap_1d(const GTO::CGTO &f1, const GTO::CGTO &f2);
         cartesian gaussian_product_center(const GTO::CGTO &f1, const GTO::CGTO &f2);
 
     public:

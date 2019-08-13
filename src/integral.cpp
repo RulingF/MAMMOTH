@@ -50,9 +50,11 @@ void Integral::compute_overlap()
     double wz;//phys_pi;
 }
 
-double Integral::compute_overlap_1d()
+double Integral::compute_overlap_1d(const GTO::CGTO &f1, const GTO::CGTO &f2)
 {
+    double sum = 0;
 
+    //for()
 }
 
 void Integral::compute_kinetic()

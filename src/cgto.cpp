@@ -72,4 +72,20 @@ namespace GTO
     {
         return this->r;
     }
+
+    const unsigned int CGTO::get_xpower() const
+    {
+        return this->a;
+    }
+
+    const unsigned int CGTO::get_ypower() const
+    {
+        return this->b;
+    }
+
+    const unsigned int CGTO::get_zpower() const
+    {
+        return this->c;
+    }
+
 } // namespace GTO

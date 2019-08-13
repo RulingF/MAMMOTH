@@ -62,6 +62,9 @@ namespace GTO
         /*access functions */
             const double get_alpha() const;
             const cartesian get_cartesian() const;
+            const unsigned int get_xpower() const;
+            const unsigned int get_ypower() const;
+            const unsigned int get_zpower() const;
 
         private:
             inline double getN() const; //Calculate the normalization constant N
