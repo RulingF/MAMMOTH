@@ -44,7 +44,15 @@ void Integral::compute_integrals()
 
 void Integral::compute_overlap()
 {
-    //phys_pi;
+    double pre;
+    double wx;
+    double wy;
+    double wz;//phys_pi;
+}
+
+double Integral::compute_overlap_1d()
+{
+    
 }
 
 void Integral::compute_kinetic()

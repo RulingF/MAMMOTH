@@ -61,6 +61,10 @@ class Integral
         void compute_attractive();
         void compute_core_hamiltonian();
 
+    private:
+    /*Auxiliary functions */
+        double compute_overlap_1d();
+        
     public:
     /*two-electron */
         void compute_coulomb_repulsive();
