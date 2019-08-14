@@ -41,4 +41,15 @@ inline unsigned int combin(const unsigned int n, const unsigned int m)
     return arrang(n,m)/permut(m);
 }
 
+inline unsigned int factorial(const unsigned int n)
+{
+    return n <= 1 ? 1 : n*factorial(n-1);
+}
+
+inline unsigned int factorial_2(const unsigned int n)
+ /* factorial function = 1*3*5*...*n */
+{
+    return n <= 1 ? 1 : n*factorial_2(n-2);
+}
+
 #endif //_MATHFUNC_H

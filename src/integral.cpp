@@ -53,6 +53,8 @@ void Integral::compute_overlap()
 double Integral::compute_overlap_1d(const GTO::CGTO &f1, const GTO::CGTO &f2)
 {
     double sum = 0;
+    cartesian r_center = gaussian_product_center(f1,f2);
+    
 
     //for()
 }
