@@ -43,30 +43,35 @@ void Integral::compute_integrals(Molecule &mol)
     compute_coulomb_repulsive();
 }
 
-void Integral::compute_overlap(const Basis &b1, const Basis &b2)
+void Integral::compute_overlap()
 {
-    double pre;
-    double wx;
-    double wy;
-    double wz;//phys_pi;
+    
 }
 
 double Integral::compute_overlap_gto(const GTO::CGTO &f1, const GTO::CGTO &f2)
 {
-    double sum = 0;
     cartesian r_center = gaussian_product_center(f1,f2);
 
+    double sum = 0;
     for(unsigned int i = 0; i<f1.get_xpower(); ++i)
         for(unsigned int j = 0; j<f2.get_xpower(); ++j)
-            //expression for overlap for x
+        {
+            if(i == j and i == 0)
+        }    //expression for overlap for x
     
+    double sum = 0;
     for(unsigned int i = 0; i<f1.get_ypower(); ++i)
         for(unsigned int j = 0; j<f2.get_ypower(); ++j)
-            //expression for overlap for y
+        {
+            if(i == j and i == 0)
+        }   //expression for overlap for y
 
+    double sum = 0;
     for(unsigned int i = 0; i<f1.get_zpower(); ++i)
         for(unsigned int j = 0; j<f2.get_zpower(); ++j)
-            //expression for overlap for z
+        {
+            if(i == j and i == 0)
+        }    //expression for overlap for z
 
     //for()
 }
