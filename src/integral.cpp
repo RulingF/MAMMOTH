@@ -33,16 +33,17 @@ Integral::Integral(Molecule &mol)
     }
     this->norbs = norbscnt;//test for this
 
+    compute_integrals(mol);
 }
 
-void Integral::compute_integrals()
+void Integral::compute_integrals(Molecule &mol)
 {
     compute_overlap();
     compute_kinetic();
     compute_coulomb_repulsive();
 }
 
-void Integral::compute_overlap()
+void Integral::compute_overlap(const Basis &b1, const Basis &b2)
 {
     double pre;
     double wx;
@@ -50,11 +51,22 @@ void Integral::compute_overlap()
     double wz;//phys_pi;
 }
 
-double Integral::compute_overlap_1d(const GTO::CGTO &f1, const GTO::CGTO &f2)
+double Integral::compute_overlap_gto(const GTO::CGTO &f1, const GTO::CGTO &f2)
 {
     double sum = 0;
     cartesian r_center = gaussian_product_center(f1,f2);
+
+    for(unsigned int i = 0; i<f1.get_xpower(); ++i)
+        for(unsigned int j = 0; j<f2.get_xpower(); ++j)
+            //expression for overlap for x
     
+    for(unsigned int i = 0; i<f1.get_ypower(); ++i)
+        for(unsigned int j = 0; j<f2.get_ypower(); ++j)
+            //expression for overlap for y
+
+    for(unsigned int i = 0; i<f1.get_zpower(); ++i)
+        for(unsigned int j = 0; j<f2.get_zpower(); ++j)
+            //expression for overlap for z
 
     //for()
 }

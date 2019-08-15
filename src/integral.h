@@ -53,7 +53,7 @@ class Integral
     public:
         Integral():norbs(1){};//Default constructor
         Integral(Molecule &mol); //
-        void compute_integrals(); //
+        void compute_integrals(Molecule &mol); //
         
     public:
     /*one-electron */
@@ -64,7 +64,7 @@ class Integral
 
     private:
     /*Auxiliary functions */
-        double compute_overlap_1d(const GTO::CGTO &f1, const GTO::CGTO &f2);
+        double compute_overlap_gto(const GTO::CGTO &f1, const GTO::CGTO &f2);
         cartesian gaussian_product_center(const GTO::CGTO &f1, const GTO::CGTO &f2);
 
     public:
